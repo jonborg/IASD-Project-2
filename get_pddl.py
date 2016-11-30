@@ -1,11 +1,23 @@
+import sys
+
 class PDDL:
     def __init__(self):
         self.init_state = []
         self.goal_state = []
-        self.actions    = {}
+        self.actions    = []
 
     def add_action(self, id, action):
-        self.action[id] = action
+        self.actions.append(action)
+	
+    def show(self):
+        print("I " + ' '.join(self.init_state))
+        print("G " + ' '.join(self.init_state))
+        for a in self.actions:
+            print("A " + a.name)
+            for p in list((a.precond)):
+                print("\t: " + p)
+            for e in list((a.effect)):
+                print("\t-> " + e)
 
 
 
@@ -36,13 +48,23 @@ def open_file(file):
             ind = 0
             # the symbol '->' separates preconditions from effects
             for i in range(len(words)): # search index of symbol '->'
-                if words[i] == '->':
+                if words[i] == "->":
                     ind = i
                     break
-            precondition = words[3:ind]
+            name = words[1]
+            preconditions = words[3:ind]
             effects = words[ind+1:]
-            new_action = action(words[1], preconditions, effects)
+            new_action = action(name, preconditions, effects)
             pddl.add_action(new_action.name, new_action)
 
     f.close()
     return pddl
+
+def main():
+	
+	pddl = open_file(sys.argv[1])
+	pddl.show()
+
+if __name__ == "__main__":
+	main()
+	
