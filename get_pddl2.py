@@ -9,8 +9,11 @@ class PDDL:
         self.actions    = []    # list of possible actions
         self.dict       = []    # dictionary describing every possible predicate
 
-    def add_action(self, id, action):
+    def add_action(self, action):
         self.actions.append(action)
+    
+    def add_dict_entry(self, dict):
+        self.dict.append(dict)
     
     def count_consts(self, predicate):
         for c in predicate:
@@ -19,12 +22,19 @@ class PDDL:
                 self.nb_consts += 1
     
     def create_dict(self, consts, predicates):
-        for p in predicates:
+        for pred in predicates:
             nb_args = 0
-            for c in p:
-                if c == "(":
+            p = pred.split("(")
+            pred_name = p[0]
+            pred_args = []
+            for c in p[1]:
+                if c.isupper() and c not in pred_args:
+                    pred_args.append(c)
+                    nb_args += 1
+            dict = dictionary(pred_name, pred_args)
+            add_dict_entry(dict)
+            
                     
-    
     def hebrand_base(self):
         
         # count constants
@@ -51,6 +61,11 @@ class PDDL:
             for e in list((a.effect)):
                 print("\t-> " + e)
 
+class dictionary:
+    def __init__(self, pred_name, pred_args):
+        self.nb_args = len(pred_args)
+        self.pred_name = pred_name
+        self.pred_args = pred_args
 
 
 class action:
@@ -88,7 +103,7 @@ def open_file(file):
             preconditions = words[3:ind]
             effects = words[ind+1:]
             new_action = action(name, preconditions, effects)
-            pddl.add_action(new_action.name, new_action)
+            pddl.add_action(new_action)
 
     f.close()
     return pddl
@@ -100,4 +115,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-	
