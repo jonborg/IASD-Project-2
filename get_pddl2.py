@@ -4,12 +4,14 @@ class PDDL:
     def __init__(self):
         self.nb_consts  = 0     # number of constants
         self.consts     = []    # list of constants
-        self.nb_ preds  = []    # number of predicates
+        self.nb_preds   = 0     # number of predicates
         self.predicates = []    # list of predicates
         self.init_state = []    # list of predicates composing the initial state
         self.goal_state = []    # list of predicates composing the goal state
         self.actions    = []    # list of possible actions
         self.dict       = {}    # dictionary describing every possible predicate
+        self.h_init_state = []  # initial state in Hebrand base
+        self.h_goal_state = []  # goal state in Hebrand base
 
     def add_action(self, action):
         self.actions.append(action)
@@ -73,11 +75,15 @@ class PDDL:
             self.dict[str(p)]= i
 
         # transform I and G into hebrand base
-        for i in 
-#        for p in self.init_state:
-#            h_init_state.append(self.dict.get(p))
-#        for p in self.goal_state:
-#            h_goal_state.append(self.dict.get(p))
+        for i in self.dict:
+            if self.dict[i] in self.init_state:
+                self.h_init_state.append(self.dict.get(i))
+            else:
+                self.h_init_state.append("-"+self.dict.get(i))
+            if self.dict[i] in self.goal_state:
+                self.h_goal_state.append(self.dict.get(i))
+            else:
+                self.h_goal_state.append("-"+self.dict.get(i))
         
         
 
