@@ -4,11 +4,12 @@ class PDDL:
     def __init__(self):
         self.nb_consts  = 0     # number of constants
         self.consts     = []    # list of constants
+        self.nb_ preds  = []    # number of predicates
         self.predicates = []    # list of predicates
         self.init_state = []    # list of predicates composing the initial state
         self.goal_state = []    # list of predicates composing the goal state
         self.actions    = []    # list of possible actions
-        self.dict       = []    # dictionary describing every possible predicate
+        self.dict       = {}    # dictionary describing every possible predicate
 
     def add_action(self, action):
         self.actions.append(action)
@@ -53,18 +54,33 @@ class PDDL:
             pred_name = p[0]
             nb_args = p[1].count(",")+1
             nb_possible_preds = nb_args**self.nb_consts
-            for assign in nb_possible_preds:
+            for assign in range(nb_possible_preds):
                 predicate = pred_name + "("
-                for arg in range(nb_args):
-                    for c in self.consts:
+                for i,c in enumerate(self.consts):
+                    for arg in range(nb_args):
                         predicate += c + ","
-                    
-                self.predicates.append(predicate)
+                        if i == nb_args:
+                            predicate = predicate[:-1] + ")"
+                    break
+                predicate = predicate[:-1] + ")"
+                if predicate in self.predicates:
+                    continue
+                else:
+                    self.predicates.append(predicate)
             
+        # attribute a number (SAT variable) to each predicate
+        for i,p in enumerate(self.predicates):
+            self.dict[str(p)]= i
+
+        # transform I and G into hebrand base
+        for i in 
+#        for p in self.init_state:
+#            h_init_state.append(self.dict.get(p))
+#        for p in self.goal_state:
+#            h_goal_state.append(self.dict.get(p))
         
         
-                
-	
+
     def show(self):
         print(' '.join(self.consts))
         print("I " + ' '.join(self.init_state))
@@ -76,8 +92,8 @@ class PDDL:
             for e in list((a.effect)):
                 print("\t-> " + e)
         print("Predicates:")
-        for d in self.dict:
-            print("\t " + d)
+        for d in self.predicates:
+            print("\t " + ' '.join(self.predicates))
 
 class dictionary:
     def __init__(self, pred_name, pred_args):
@@ -131,6 +147,7 @@ def main():
     pddl = open_file(sys.argv[1])
     pddl.show()
     pddl.hebrand_base()
+    pddl.show()
 
 if __name__ == "__main__":
 	main()
