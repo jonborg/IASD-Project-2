@@ -4,6 +4,7 @@ class PDDL:
     def __init__(self):
         self.nb_consts  = 0     # number of constants
         self.consts     = []    # list of constants
+        self.predicates = []    # list of predicates
         self.init_state = []    # list of predicates composing the initial state
         self.goal_state = []    # list of predicates composing the goal state
         self.actions    = []    # list of possible actions
@@ -32,7 +33,7 @@ class PDDL:
                     pred_args.append(c)
                     nb_args += 1
             dict = dictionary(pred_name, pred_args)
-            add_dict_entry(dict)
+            self.add_dict_entry(dict)
             
                     
     def hebrand_base(self):
@@ -45,7 +46,21 @@ class PDDL:
         for g in self.goal_state:
             if g != "G":
                 self.count_consts(g)
-        
+                
+        # now need to add predicates to the predicate list
+        for pred in self.init_state + self.goal_state:
+            p = pred.split("(")
+            pred_name = p[0]
+            nb_args = p[1].count(",")+1
+            nb_possible_preds = nb_args**self.nb_consts
+            for assign in nb_possible_preds:
+                predicate = pred_name + "("
+                for arg in range(nb_args):
+                    for c in self.consts:
+                        predicate += c + ","
+                    
+                self.predicates.append(predicate)
+            
         
         
                 
@@ -60,6 +75,9 @@ class PDDL:
                 print("\t: " + p)
             for e in list((a.effect)):
                 print("\t-> " + e)
+        print("Predicates:")
+        for d in self.dict:
+            print("\t " + d)
 
 class dictionary:
     def __init__(self, pred_name, pred_args):
@@ -110,8 +128,9 @@ def open_file(file):
 
 def main():
 	
-	pddl = open_file(sys.argv[1])
-	pddl.show()
+    pddl = open_file(sys.argv[1])
+    pddl.show()
+    pddl.hebrand_base()
 
 if __name__ == "__main__":
 	main()
