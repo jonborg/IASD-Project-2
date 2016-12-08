@@ -88,9 +88,9 @@ class PDDL:
         
 
     def show(self):
-        print(' '.join(self.consts))
+        print("Constants: " + ' '.join(self.consts))
         print("I " + ' '.join(self.init_state))
-        print("G " + ' '.join(self.init_state))
+        print("G " + ' '.join(self.goal_state))
         for a in self.actions:
             print("A " + a.name)
             for p in list((a.precond)):
@@ -100,6 +100,9 @@ class PDDL:
         print("Predicates:")
         for d in self.predicates:
             print("\t " + ' '.join(self.predicates))
+        print("Hebrand base:")
+        print("\t " + "I " + ' '.join(self.h_init_state))
+        print("\t " + "G " + ' '.join(self.h_goal_state))
 
 class dictionary:
     def __init__(self, pred_name, pred_args):
@@ -151,7 +154,6 @@ def open_file(file):
 def main():
 	
     pddl = open_file(sys.argv[1])
-    pddl.show()
     pddl.hebrand_base()
     pddl.show()
 
