@@ -77,13 +77,13 @@ class PDDL:
         # transform I and G into hebrand base
         for i in self.dict:
             if self.dict[i] in self.init_state:
-                self.h_init_state.append(self.dict.get(i))
+                self.h_init_state.append(i)
             else:
-                self.h_init_state.append("-"+self.dict.get(i))
+                self.h_init_state.append("-"+i)
             if self.dict[i] in self.goal_state:
-                self.h_goal_state.append(self.dict.get(i))
+                self.h_goal_state.append(i)
             else:
-                self.h_goal_state.append("-"+self.dict.get(i))
+                self.h_goal_state.append("-"+i)
         
         
 
