@@ -25,6 +25,7 @@ class PDDL:
         self.sat_goal_state = []    # goal state in SAT (using DIMACS notation)
         self.sat_actions    = []    # action schemas in SAT (using DIMACS notation)
         self.sat_sentence   = []
+        self.dimacs_sentence = []
         
 
     def add_action(self, action):
@@ -71,14 +72,21 @@ class PDDL:
                 combinations=list(itertools.permutations(self.consts,pred_info[1]))
             else:
                 combinations=self.consts
-
+            print(combinations)
             for listing in combinations:
                 predicate=pred_info[0] + "("
+                print(list(listing))
                 for i in range (pred_info[1]):
-                    if i==pred_info[1]-1:
-                        predicate += listing[i] + ")"
+                    if pred_info[1]>1:
+                        if i==pred_info[1]-1:
+                            predicate += listing[i] + ")"
+                        else:
+                            predicate += listing[i] + ","
                     else:
-                        predicate += listing[i] + ","
+                        if i==pred_info[1]-1:
+                            predicate += listing + ")"
+                        else:
+                            predicate += listing + ","
                 self.predicates.append(predicate)
        
             
@@ -161,8 +169,57 @@ class PDDL:
                 
         # transform action schemas into SAT
         for a in self.h_actions:
-            self.sat_actions.append(str(self.dict[a.name]))
+            new_sat_action = sat_action(a, str(self.dict[a.name]))
+            self.sat_actions.append(new_sat_action)
+    
+    
+    def build_sat_sentence(self, horizon):
+        # use Hebrand names and convert to DIMACS later
+        
+        # first clause is initial state
+        clause = self.init_state.copy()
+        self.sat_sentence.append(clause)
+        
+        # next comes the action schemas
+        clause = []
+        for a in self.h_actions:
+            for precond in a.precond:
+                clause.append("-" + a.name + str(horizon))
+                clause.append(precond + str(horizon))
+                self.sat_sentence.append(clause)
+                clause = []
+        
+        # next comes the frame axioms
+        clause = []
+        for a in self.h_actions:
+            for p in self.predicates:
+                if (p not in a.effect):
+                    clause.append("-" + p + str(horizon))
+                    clause.append("-" + a.name + str(horizon))
+                    clause.append(p + str(horizon+1))
+                    self.sat_sentence.append(clause)
+                if ('-'+p not in a.effect):
+                    clause.append(p + str(horizon))
+                    clause.append("-" + a.name + str(horizon))
+                    clause.append("-" + p + str(horizon+1))
+                    self.sat_sentence.append(clause)
+                    
+                    
+        
+        # lastly comes the effects
             
+        
+    
+#    def build_sat_sentence(self, horizon):
+#        
+#        # first clause is initial state
+#        self.sat_sentence.append(self.sat_init_state)
+#        self.sat_sentence.append(" 0")
+#        
+#        # then come the actions schemes
+#        for a in self.sat_actions
+#            for precond in a.precond:
+#                self.sat_sentence.append(" -" + a.name + precond + " 0")
     
         
 
@@ -191,7 +248,7 @@ class PDDL:
         print("SAT formulation:")
         print("\t " + "I " + ' '.join(self.sat_init_state))
         print("\t " + "G " + ' '.join(self.sat_goal_state))
-        
+        # falta imprimir aqui as acoes
         print("SAT dictionary:")
         # invert mapping for printing
         inv_dict = dict((v,k) for k,v in self.dict.items())
@@ -207,11 +264,13 @@ class action:
         self.precond = precond
         self.effect  = effect
 
-    def show(self):
-        print(self.nb_args)
-        print(self.name)
-        print(self.precond)
-        print(self.effect)
+
+class sat_action:
+    def __init__(self, act, sat):
+        self.name     = act.name
+        self.precond  = act.precond
+        self.effect   = act.effect
+        self.sat_code = sat
 
 
 
