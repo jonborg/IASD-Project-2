@@ -212,8 +212,9 @@ class PDDL:
                     self.sat_sentence.remove(e)
                 elif e not in self.sat_sentence:
                     self.sat_sentence.append(e)
-
     
+    def convert2dimacs(self):
+        
         
 
     def show(self):
@@ -251,7 +252,8 @@ class PDDL:
         
     def print_sentence(self):
         f = open("sentence.txt", "w")
-        print(self.sat_sentence, file=f)
+        for clause in self.sat_sentence:
+            print(clause, file=f)
         f.close()
 
 
