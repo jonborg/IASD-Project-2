@@ -5,7 +5,7 @@ def get_letters(string):
     letters = []
     for i in string:
         if i.isalpha():
-            leters.append(i)
+            letters.append(i)
     return letters
 
 class PDDL:
@@ -24,14 +24,11 @@ class PDDL:
         self.sat_init_state = []    # initial state in SAT (using DIMACS notation)
         self.sat_goal_state = []    # goal state in SAT (using DIMACS notation)
         self.sat_actions    = []    # action schemas in SAT (using DIMACS notation)
+        self.sat_sentence   = []
         
 
     def add_action(self, action):
         self.actions.append(action)
-        
-    
-    def add_dict_entry(self, dic):
-        self.dict.append(dic)
         
     
     def count_consts(self, predicate):
@@ -41,20 +38,6 @@ class PDDL:
             if  c not in self.consts:
                 self.consts.append(c)
                 self.nb_consts += 1
-
-   
-    def create_dict(self, consts, predicates):
-        for pred in predicates:
-            nb_args = 0
-            p = pred.split("(")
-            pred_name = p[0]
-            pred_args = []
-            for c in p[1]:
-                if c.isupper() and c not in pred_args:
-                    pred_args.append(c)
-                    nb_args += 1
-            dict = dictionary(pred_name, pred_args)
-            self.add_dict_entry(dict)
         
             
                     
@@ -100,8 +83,10 @@ class PDDL:
        
             
         # attribute a number (SAT variable) to each predicate
+        # i.e., build predicate dictionary
         for i,p in enumerate(self.predicates, start=1):
             self.dict[str(p)] = i
+
 
         # transform I and G into hebrand base
         for key in self.dict:
@@ -115,18 +100,18 @@ class PDDL:
                 self.h_goal_state.append("-"+key)
         
         # transform action schemas into hebrand base
-        for action in self.actions:
-            action_name = action.name.split("(")
+        for act in self.actions:
+            action_name = act.name.split("(")
             action_args = get_letters(action_name[1])
             action_name = action_name[0]
-            combinations = list(itertools.permutations(self.consts,action.nb_args))
+            combinations = list(itertools.permutations(self.consts,act.nb_args))
             
             for listing in combinations:
-                h_action_name += action_name + "(" + ','.join(listing) + ")"
+                h_action_name = action_name + "(" + ','.join(listing) + ")"
                 
                 # convert preconditions into hebrand base
                 h_precond = []
-                for precond in action.precond:
+                for precond in act.precond:
                     dummy_precond = precond.split("(")
                     precond_name = dummy_precond[0]
                     precond_args = []
@@ -135,11 +120,11 @@ class PDDL:
                         for j in action_args:
                             if i==j:
                                 precond_args.append(listing[action_args.index(j)])
-                    h_precond.append(precond)
+                    h_precond.append(precond_name+"("+','.join(precond_args)+")")
                     
                 # convert effects in to hebrand base
                 h_effects = []
-                for effect in action.effect:
+                for effect in act.effect:
                     dummy_effect = effect.split("(")
                     effect_name = dummy_effect[0]
                     effect_args = []
@@ -148,12 +133,20 @@ class PDDL:
                         for j in action_args:
                             if i==j:
                                 effect_args.append(listing[action_args.index(j)])
-                    h_effect.append(effect)
+                    h_effects.append(effect_name+"("+','.join(effect_args)+")")
                 
-                self.h_actions.append(action(h_action_name, h_precond, h_effect))
-            
+                self.h_actions.append(action(h_action_name, h_precond, h_effects))
+        
+        
+        # update predicate dictionary with grounded actions
+        last_val = sorted(self.dict.values())[-1]
+        for a in self.h_actions:
+            last_val += 1
+            self.dict[a.name] = last_val
             
         
+    def hebrand2sat(self):
+
         # transform I and G into SAT
         for i in self.h_init_state:
             if i[0] == "-":
@@ -165,7 +158,12 @@ class PDDL:
                 self.sat_goal_state.append("-"+str(self.dict[g[1:]]))
             else:
                 self.sat_goal_state.append(str(self.dict[g]))
-        
+                
+        # transform action schemas into SAT
+        for a in self.h_actions:
+            self.sat_actions.append(str(self.dict[a.name]))
+            
+    
         
 
     def show(self):
@@ -184,22 +182,22 @@ class PDDL:
         print("Hebrand base:")
         print("\t " + "I " + ' '.join(self.h_init_state))
         print("\t " + "G " + ' '.join(self.h_goal_state))
+        for a in self.h_actions:
+            print("\t " + "A " + a.name)
+            for p in list((a.precond)):
+                print("\t\t: " + p)
+            for e in list((a.effect)):
+                print("\t\t-> " + e)
         print("SAT formulation:")
         print("\t " + "I " + ' '.join(self.sat_init_state))
         print("\t " + "G " + ' '.join(self.sat_goal_state))
+        
         print("SAT dictionary:")
         # invert mapping for printing
         inv_dict = dict((v,k) for k,v in self.dict.items())
         for key in sorted(inv_dict.keys()):
             print("\t" + str(key) + " : " + str(inv_dict[key]))
         
-        
-
-class dictionary:
-    def __init__(self, pred_name, pred_args):
-        self.nb_args = len(pred_args)
-        self.pred_name = pred_name
-        self.pred_args = pred_args
 
 
 class action:
@@ -255,6 +253,7 @@ def main():
 	
     pddl = open_file(sys.argv[1])
     pddl.hebrand_base()
+    pddl.hebrand2sat()
     pddl.show()
 
 if __name__ == "__main__":
