@@ -72,10 +72,8 @@ class PDDL:
                 combinations=list(itertools.permutations(self.consts,pred_info[1]))
             else:
                 combinations=self.consts
-            print(combinations)
             for listing in combinations:
                 predicate=pred_info[0] + "("
-                print(list(listing))
                 for i in range (pred_info[1]):
                     if pred_info[1]>1:
                         if i==pred_info[1]-1:
@@ -173,8 +171,10 @@ class PDDL:
             self.sat_actions.append(new_sat_action)
     
     
-    def build_sat_sentence(self, horizon):
+    def build_sat_sentence(self, horizon, last_sentence=None, last_action=None):
         # use Hebrand names and convert to DIMACS later
+        
+        self.sat_sentence.append(last_sentence)
         
         # first clause is initial state
         clause = self.init_state.copy()
@@ -205,21 +205,14 @@ class PDDL:
                     self.sat_sentence.append(clause)
                     
                     
-        
         # lastly comes the effects
-            
-        
-    
-#    def build_sat_sentence(self, horizon):
-#        
-#        # first clause is initial state
-#        self.sat_sentence.append(self.sat_init_state)
-#        self.sat_sentence.append(" 0")
-#        
-#        # then come the actions schemes
-#        for a in self.sat_actions
-#            for precond in a.precond:
-#                self.sat_sentence.append(" -" + a.name + precond + " 0")
+        if horizon>1 and last_action==None:
+            for e in last_action.effect:
+                if e[1]=="-" and e in self.sat_setence:
+                    self.sat_sentence.remove(e)
+                elif e not in self.sat_sentence:
+                    self.sat_sentence.append(e)
+
     
         
 
@@ -254,7 +247,12 @@ class PDDL:
         inv_dict = dict((v,k) for k,v in self.dict.items())
         for key in sorted(inv_dict.keys()):
             print("\t" + str(key) + " : " + str(inv_dict[key]))
+
         
+    def print_sentence(self):
+        f = open("sentence.txt", "w")
+        print(self.sat_sentence, file=f)
+        f.close()
 
 
 class action:
@@ -313,7 +311,9 @@ def main():
     pddl = open_file(sys.argv[1])
     pddl.hebrand_base()
     pddl.hebrand2sat()
+    pddl.build_sat_sentence(0)
     pddl.show()
+    pddl.print_sentence()
 
 if __name__ == "__main__":
 	main()
