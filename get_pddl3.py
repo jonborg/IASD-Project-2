@@ -150,7 +150,7 @@ class PDDL:
                                 effect_args.append(listing[action_args.index(j)])
                     h_effect.append(effect)
                 
-                self.h_actions.append(action(h_action_name, h_preconf, h_effect))
+                self.h_actions.append(action(h_action_name, h_precond, h_effect))
             
             
         
