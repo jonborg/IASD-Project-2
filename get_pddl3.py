@@ -1,7 +1,7 @@
 import sys
 import itertools
 import copy
-import dpll
+from dpll import *
 
 def get_letters(string):
     letters = []
@@ -245,14 +245,22 @@ class PDDL:
             print("\t" + str(key) + " : " + str(inv_dict[key]))
 
         
-    def print_sentence(self):
+    def print_sentence(self,mode):
         f = open("sentence.txt", "w")
-        print("c "+sys.argv[1],file=f)
-        print("p cnf"+str(len(self.dict))+" "+str(len(self.dimacs_sentence)),file=f)        
-        for clause in self.dimacs_sentence:
-            for literal in clause:
-               print(literal,end=" ", file=f)
-            print("0",file=f)
+        if mode!=0:
+            print("c "+sys.argv[1],file=f)
+            print("p cnf"+str(len(self.dict))+" "+str(len(self.dimacs_sentence)),file=f)
+            sentence=self.dimacs_sentence
+        else:
+            sentence=self.sat_sentence
+
+        for clause in sentence:
+            if mode==0:
+                print(clause,file=f)
+            else:
+                for literal in clause:
+                    print(literal,end=" ", file=f)
+                print("0",file=f)
         f.close()
 
 
@@ -326,21 +334,21 @@ def open_file(file):
     f.close()
     return pddl
 
-def convert2dimacs(sentence):
+def convert2dimacs(sentence,dpddl):
     dictionary={}
     dimacs=copy.deepcopy(sentence)
-    print(dimacs)
     n=1
     for i,clause in enumerate(sentence):
         for j, literal in enumerate(clause):
             if literal not in dictionary:
-                print(i,j)
                 if literal[0]!="-":
                     dictionary[literal]=n
+                    dictionary["-"+literal]=-n
                     dimacs[i][j]=dictionary[literal]
                     n=n+1
                 else:
                     dictionary[literal]=-n
+                    dictionary[literal[1:]]=n
                     dimacs[i][j]=dictionary[literal]
                     n=n+1
             else:
@@ -359,13 +367,23 @@ def main():
     for h in range(1,4):
         pddl.build_sat_sentence(h)
         t_sentence=add_goal_to_sentence(pddl.sat_sentence,h,pddl.goal_state)
-        D=convert2dimacs(t_sentence)
+        D=convert2dimacs(t_sentence,pddl)
         pddl.dict=D[0]
+        n_literals=len(pddl.dict)
+        setup=[copy.deepcopy(D[1]),copy.deepcopy(D[1]),[0]*n_literals,[],[],0,[]]
+        init_state=state(setup)
+        result=dpll(init_state)
+        if result==False:
+            continue
+        else:
+            break
 
     pddl.sat_sentence=t_sentence
     pddl.dimacs_sentence=D[1]
     pddl.show()
-    pddl.print_sentence()
+    pddl.print_sentence(0)
+    print(h)
+    print(result)
 
 if __name__ == "__main__":
 	main()

@@ -28,10 +28,11 @@ class state:
         print(self.depth)
         print("Last operation: ",end="")
         print(self.last_op)
+        
         print("---------------------------")
 
     
-    def assign(self,l_values):
+    """def assign(self,l_values):
         self.l_values=l_values
         ic=0
         while ic<len(self.sentence):
@@ -56,9 +57,52 @@ class state:
             if f==0:
                 self.sentence.pop(ic)
                 ic=ic-1
-            ic=ic+1
-        if self.sentence==[]:
+            ic=ic+1"""
+    def assign(self,l_values):
+        
+
+        self.l_values=l_values
+        print(self.sentence)
+        assignment=copy.deepcopy(self.sentence)
+        n_clauses=[]
+        for i,clause in enumerate(self.sentence):
+            for j in range(0,len(clause)):
+                if self.sentence[i][j] in l_values:
+                    assignment[i][j]=1
+                else:
+                    if -assignment[i][j] in l_values:
+                        assignment[i][j]=-1
+                    else:
+                        assignment[i][j]=0
+            if 1 in assignment[i]:
+                n_clauses.append(1)
+            else:
+                if sum(assignment[i])==-len(assignment[i]):
+                    n_clauses.append(-1)
+                else:
+                    n_clauses.append(0)
+        print(assignment)
+        print(n_clauses)
+        if sum(n_clauses)==len(n_clauses):
             self.sentence=True
+        else:
+            for i in reversed(range(0,len(n_clauses))):
+                print(i)
+                if n_clauses[i]==1:
+                    assignment.pop(i)
+                    self.sentence.pop(i)
+                if n_clauses[i]==-1:
+                    self.sentence=[]
+                if n_clauses[i]==0:
+                    for j,literal in reversed(list(enumerate(assignment[i]))):
+                        if literal==-1:
+                        
+                            assignment[i].pop(j)
+                            self.sentence[i].pop(j)
+            
+        
+        print(self.sentence)
+            
 
     def unit(self):
         unit=[]
@@ -109,11 +153,12 @@ def children (current_state,assign):
 
 def dpll (current_state):
     current_state.show()
-
     #SATISFABLE?
     if current_state.sentence==True:
-        return True
-    
+        return current_state.l_values
+    else:
+        print("scanning...")
+    input()
     #EMPTY CLAUSE
     if current_state.sentence==[]:
         return False
@@ -161,7 +206,8 @@ def dpll (current_state):
 
 
 
-        
+
+    
             
 def main ():
     #Exemplo
