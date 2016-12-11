@@ -23,10 +23,6 @@ class PDDL:
         self.h_init_state   = []    # initial state in Hebrand base
         self.h_goal_state   = []    # goal state in Hebrand base
         self.h_actions      = []    # list of action schemas in Hebrand base
-        """self.sat_init_state = []    # initial state in SAT (using DIMACS notation)
-        self.sat_goal_state = []    # goal state in SAT (using DIMACS notation)
-        self.sat_actions    = []    # action schemas in SAT (using DIMACS notation)
-        """
         self.sat_sentence   = []
         self.dimacs_sentence = []
         
@@ -58,16 +54,18 @@ class PDDL:
 
         # now need to add predicates to the predicate list
         p_list=[]
-        #print(self.init_state + self.goal_state)
-        for pred in self.init_state + self.goal_state:
-            p = pred.split("(")
-            pred_name = p[0]
-            nb_args = p[1].count(",")+1
-            info=[pred_name, nb_args]
-            if info in p_list:
-                continue
-            else:
-                p_list.append(info)
+
+        for a in self.actions:
+            for pred in a.precond + a.effect:
+                p = pred.split("(")
+                pred_name = p[0]
+                nb_args = p[1].count(",")+1
+                info=[pred_name, nb_args]
+                if info in p_list:
+                    continue
+                else:
+                    p_list.append(info)
+
         
         for pred_info in p_list:
             if pred_info[1]>1:
@@ -88,25 +86,19 @@ class PDDL:
                         else:
                             predicate += listing + ","
                 self.predicates.append(predicate)
-       
-            
-        # attribute a number (SAT variable) to each predicate
-        # i.e., build predicate dictionary
-        """for i,p in enumerate(self.predicates, start=1):
-            self.dict[str(p)] = i
-        """
+        
 
-        # transform I and G into hebrand base
         for predicate in self.predicates:
             if predicate in self.init_state:
                 self.h_init_state.append(predicate)
             else:
-                self.h_init_state.append("-"+predicate)
-            if predicate in self.goal_state:
-                self.h_goal_state.append(predicate)
-            else:
-                self.h_goal_state.append("-"+predicate)
-        
+                if predicate[0]!="-":
+                    self.h_init_state.append("-"+predicate)
+                else:
+                    self.h_init_state.append(predicate[1:])
+
+
+                    
         # transform action schemas into hebrand base
         for act in self.actions:
             action_name = act.name.split("(")
@@ -142,16 +134,9 @@ class PDDL:
                             if i==j:
                                 effect_args.append(listing[action_args.index(j)])
                     h_effects.append(effect_name+"("+','.join(effect_args)+")")
-                
                 self.h_actions.append(action(h_action_name, h_precond, h_effects))
         
         
-        # update predicate dictionary with grounded actions
-        """last_val = sorted(self.dict.values())[-1]
-        for a in self.h_actions:
-            last_val += 1
-            self.dict[a.name] = last_val
-        """
             
     
     def build_sat_sentence(self, horizon, last_sentence=None):
@@ -161,7 +146,7 @@ class PDDL:
         if horizon==1:
             for literal in self.h_init_state:
                 self.sat_sentence.append([literal+"0"])
-                
+
         # next comes the action schemas
         
         for action in self.h_actions:
@@ -176,30 +161,29 @@ class PDDL:
                 clause.append("-"+action.name+str(horizon-1))
                 clause.append(effect+str(horizon))
                 self.sat_sentence.append(clause)
-                
+
         # next comes the frame axioms
         clause = []
         pred=copy.deepcopy(self.predicates)
-        for index,p in enumerate(pred):
-            pred[index]="-"+p
-        pred=pred+copy.deepcopy(self.predicates)
         
         for a in self.h_actions:
             for p in pred:
                 if (p[0]!="-" and p not in a.effect and "-"+p not in a.effect):
+                    
                     clause.append("-" + p + str(horizon-1))
                     clause.append("-" + a.name + str(horizon-1))
                     clause.append(p + str(horizon))
                     self.sat_sentence.append(clause)
                     clause=[]
+                    
                 if (p[0]=="-" and p[1:] not in a.effect and p not in a.effect):
                     clause.append(p[1:] + str(horizon-1))
                     clause.append("-" + a.name + str(horizon-1))
                     clause.append(p + str(horizon))
                     self.sat_sentence.append(clause)
                     clause=[]
+                
                     
-
         #choose one action per frame
         action_list=[]
         for action in self.h_actions:
@@ -222,6 +206,7 @@ class PDDL:
                 print("\t: " + p)
             for e in list((a.effect)):
                 print("\t-> " + e)
+            
         print("Predicates:")
         for d in self.predicates:
             print("\t" + d)
@@ -234,6 +219,7 @@ class PDDL:
                 print("\t\t: " + p)
             for e in list((a.effect)):
                 print("\t\t-> " + e)
+            
         print("SAT formulation:")
         print("\t " + "I " + ' '.join(self.h_init_state))
         print("\t " + "G " + ' '.join(self.h_goal_state))
@@ -243,7 +229,6 @@ class PDDL:
         inv_dict = dict((v,k) for k,v in self.dict.items())
         for key in sorted(inv_dict.keys()):
             print("\t" + str(key) + " : " + str(inv_dict[key]))
-
         
     def print_sentence(self,mode):
         f = open("sentence.txt", "w")
@@ -351,6 +336,7 @@ def convert2dimacs(sentence,dpddl):
                     dictionary[literal[1:]]=n
                     dimacs[i][j]=dictionary[literal]
                     n=n+1
+                
             else:
                 dimacs[i][j]=dictionary[literal]
     returning=[dictionary,dimacs]
@@ -365,11 +351,12 @@ def main():
     pddl = open_file(sys.argv[1])
     pddl.hebrand_base()
     for h in range(1,4):
+        print(h)
         pddl.build_sat_sentence(h)
         t_sentence=add_goal_to_sentence(pddl.sat_sentence,h,pddl.goal_state)
         D=convert2dimacs(t_sentence,pddl)
         pddl.dict=D[0]
-        n_literals=len(pddl.dict)
+        n_literals=int(len(pddl.dict)/2)        
         setup=[copy.deepcopy(D[1]),copy.deepcopy(D[1]),[0]*n_literals,[],[],0,[]]
         init_state=state(setup)
         result=dpll(init_state)

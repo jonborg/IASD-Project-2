@@ -62,7 +62,6 @@ class state:
         
 
         self.l_values=l_values
-        print(self.sentence)
         assignment=copy.deepcopy(self.sentence)
         n_clauses=[]
         for i,clause in enumerate(self.sentence):
@@ -81,18 +80,17 @@ class state:
                     n_clauses.append(-1)
                 else:
                     n_clauses.append(0)
-        print(assignment)
-        print(n_clauses)
+                    
         if sum(n_clauses)==len(n_clauses):
             self.sentence=True
         else:
             for i in reversed(range(0,len(n_clauses))):
-                print(i)
                 if n_clauses[i]==1:
                     assignment.pop(i)
                     self.sentence.pop(i)
                 if n_clauses[i]==-1:
                     self.sentence=[]
+                    break
                 if n_clauses[i]==0:
                     for j,literal in reversed(list(enumerate(assignment[i]))):
                         if literal==-1:
@@ -101,7 +99,6 @@ class state:
                             self.sentence[i].pop(j)
             
         
-        print(self.sentence)
             
 
     def unit(self):
@@ -157,8 +154,9 @@ def dpll (current_state):
     if current_state.sentence==True:
         return current_state.l_values
     else:
-        print("scanning...")
-    input()
+        print("scanning ("+str(current_state.depth)+")...)")
+        input()
+    
     #EMPTY CLAUSE
     if current_state.sentence==[]:
         return False
@@ -174,7 +172,12 @@ def dpll (current_state):
             new_state=children(current_state,assign)
             current_state.children.append(new_state.l_values)
             new_state.last_op=[l,"UNIT"]
-            return dpll(new_state)
+            status=dpll(new_state)
+            if status==False:
+                return status
+            else:
+                return status
+    
 
     #PURE
     pure=current_state.pure()
@@ -185,7 +188,11 @@ def dpll (current_state):
         new_state=children(current_state,assign)
         current_state.children.append(new_state.l_values)
         new_state.last_op=[l,"PURE"]
-        return dpll(new_state)
+        status=dpll(new_state)
+        if status==False:
+            return status
+        else:
+            return status
 
     #CHOOSE LITERAL
     for index,l in enumerate(current_state.l_values):
@@ -194,18 +201,26 @@ def dpll (current_state):
             assign[index]=index+1
             new_state=children(current_state,assign)
             current_state.children.append(new_state.l_values)
-            new_state.last_op=[l,"CHOSEN"]
-            return dpll(new_state)
+            new_state.last_op=[assign[index],"CHOSEN"]
+            status=dpll(new_state)
+            if status==False:
+                continue
+            else:
+                return status
 
             assign=copy.deepcopy(current_state.l_values)
             assign[index]=-(index+1) 
             new_state=children(current_state,assign)
             current_state.children.append(new_state.l_values)
-            new_state.last_op=[l,"CHOSEN"]
-            return dpll(new_state)
+            new_state.last_op=[assign[index],"CHOSEN"]
+            status=dpll(new_state)
+            if status==False:
+                return status
+            else:
+                return status
 
-
-
+   
+    
 
     
             
