@@ -294,11 +294,18 @@ class PDDL:
 
         
     def print_sentence(self):
+        # for debugging
         f = open("sat_sentence.txt", "w")
         for clause in self.sat_sentence:
             print(' '.join(clause), file=f)
         f.close()
+        
+        # get number of variables and number of clauses to print header
+        n_vars = len(self.dimacs2hebrand_dict)
+        n_clauses = self.dimacs_sentence.count('0')
+        
         f = open("dimacs_sentence.txt", "w")
+        print('p cnf ' + str(n_vars) + ' ' + str(n_clauses), file=f)
         print(self.dimacs_sentence, file=f)
         f.close()
 
