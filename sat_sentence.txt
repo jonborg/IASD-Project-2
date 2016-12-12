@@ -1,0 +1,1141 @@
+on(A,B)0 on(B,C)0 on(C,Table)0 clear(A)0
+-move(A,B,C)0 on(A,B)0
+-move(A,B,C)0 clear(A)0
+-move(A,B,C)0 clear(C)0
+-move(A,B,C)0 -on(A,B)1
+-move(A,B,C)0 on(A,C)1
+-move(A,B,C)0 -clear(C)1
+-move(A,B,C)0 clear(B)1
+-move(A,B,Table)0 on(A,B)0
+-move(A,B,Table)0 clear(A)0
+-move(A,B,Table)0 clear(Table)0
+-move(A,B,Table)0 -on(A,B)1
+-move(A,B,Table)0 on(A,Table)1
+-move(A,B,Table)0 -clear(Table)1
+-move(A,B,Table)0 clear(B)1
+-move(A,C,B)0 on(A,C)0
+-move(A,C,B)0 clear(A)0
+-move(A,C,B)0 clear(B)0
+-move(A,C,B)0 -on(A,C)1
+-move(A,C,B)0 on(A,B)1
+-move(A,C,B)0 -clear(B)1
+-move(A,C,B)0 clear(C)1
+-move(A,C,Table)0 on(A,C)0
+-move(A,C,Table)0 clear(A)0
+-move(A,C,Table)0 clear(Table)0
+-move(A,C,Table)0 -on(A,C)1
+-move(A,C,Table)0 on(A,Table)1
+-move(A,C,Table)0 -clear(Table)1
+-move(A,C,Table)0 clear(C)1
+-move(A,Table,B)0 on(A,Table)0
+-move(A,Table,B)0 clear(A)0
+-move(A,Table,B)0 clear(B)0
+-move(A,Table,B)0 -on(A,Table)1
+-move(A,Table,B)0 on(A,B)1
+-move(A,Table,B)0 -clear(B)1
+-move(A,Table,B)0 clear(Table)1
+-move(A,Table,C)0 on(A,Table)0
+-move(A,Table,C)0 clear(A)0
+-move(A,Table,C)0 clear(C)0
+-move(A,Table,C)0 -on(A,Table)1
+-move(A,Table,C)0 on(A,C)1
+-move(A,Table,C)0 -clear(C)1
+-move(A,Table,C)0 clear(Table)1
+-move(B,A,C)0 on(B,A)0
+-move(B,A,C)0 clear(B)0
+-move(B,A,C)0 clear(C)0
+-move(B,A,C)0 -on(B,A)1
+-move(B,A,C)0 on(B,C)1
+-move(B,A,C)0 -clear(C)1
+-move(B,A,C)0 clear(A)1
+-move(B,A,Table)0 on(B,A)0
+-move(B,A,Table)0 clear(B)0
+-move(B,A,Table)0 clear(Table)0
+-move(B,A,Table)0 -on(B,A)1
+-move(B,A,Table)0 on(B,Table)1
+-move(B,A,Table)0 -clear(Table)1
+-move(B,A,Table)0 clear(A)1
+-move(B,C,A)0 on(B,C)0
+-move(B,C,A)0 clear(B)0
+-move(B,C,A)0 clear(A)0
+-move(B,C,A)0 -on(B,C)1
+-move(B,C,A)0 on(B,A)1
+-move(B,C,A)0 -clear(A)1
+-move(B,C,A)0 clear(C)1
+-move(B,C,Table)0 on(B,C)0
+-move(B,C,Table)0 clear(B)0
+-move(B,C,Table)0 clear(Table)0
+-move(B,C,Table)0 -on(B,C)1
+-move(B,C,Table)0 on(B,Table)1
+-move(B,C,Table)0 -clear(Table)1
+-move(B,C,Table)0 clear(C)1
+-move(B,Table,A)0 on(B,Table)0
+-move(B,Table,A)0 clear(B)0
+-move(B,Table,A)0 clear(A)0
+-move(B,Table,A)0 -on(B,Table)1
+-move(B,Table,A)0 on(B,A)1
+-move(B,Table,A)0 -clear(A)1
+-move(B,Table,A)0 clear(Table)1
+-move(B,Table,C)0 on(B,Table)0
+-move(B,Table,C)0 clear(B)0
+-move(B,Table,C)0 clear(C)0
+-move(B,Table,C)0 -on(B,Table)1
+-move(B,Table,C)0 on(B,C)1
+-move(B,Table,C)0 -clear(C)1
+-move(B,Table,C)0 clear(Table)1
+-move(C,A,B)0 on(C,A)0
+-move(C,A,B)0 clear(C)0
+-move(C,A,B)0 clear(B)0
+-move(C,A,B)0 -on(C,A)1
+-move(C,A,B)0 on(C,B)1
+-move(C,A,B)0 -clear(B)1
+-move(C,A,B)0 clear(A)1
+-move(C,A,Table)0 on(C,A)0
+-move(C,A,Table)0 clear(C)0
+-move(C,A,Table)0 clear(Table)0
+-move(C,A,Table)0 -on(C,A)1
+-move(C,A,Table)0 on(C,Table)1
+-move(C,A,Table)0 -clear(Table)1
+-move(C,A,Table)0 clear(A)1
+-move(C,B,A)0 on(C,B)0
+-move(C,B,A)0 clear(C)0
+-move(C,B,A)0 clear(A)0
+-move(C,B,A)0 -on(C,B)1
+-move(C,B,A)0 on(C,A)1
+-move(C,B,A)0 -clear(A)1
+-move(C,B,A)0 clear(B)1
+-move(C,B,Table)0 on(C,B)0
+-move(C,B,Table)0 clear(C)0
+-move(C,B,Table)0 clear(Table)0
+-move(C,B,Table)0 -on(C,B)1
+-move(C,B,Table)0 on(C,Table)1
+-move(C,B,Table)0 -clear(Table)1
+-move(C,B,Table)0 clear(B)1
+-move(C,Table,A)0 on(C,Table)0
+-move(C,Table,A)0 clear(C)0
+-move(C,Table,A)0 clear(A)0
+-move(C,Table,A)0 -on(C,Table)1
+-move(C,Table,A)0 on(C,A)1
+-move(C,Table,A)0 -clear(A)1
+-move(C,Table,A)0 clear(Table)1
+-move(C,Table,B)0 on(C,Table)0
+-move(C,Table,B)0 clear(C)0
+-move(C,Table,B)0 clear(B)0
+-move(C,Table,B)0 -on(C,Table)1
+-move(C,Table,B)0 on(C,B)1
+-move(C,Table,B)0 -clear(B)1
+-move(C,Table,B)0 clear(Table)1
+-move(Table,A,B)0 on(Table,A)0
+-move(Table,A,B)0 clear(Table)0
+-move(Table,A,B)0 clear(B)0
+-move(Table,A,B)0 -on(Table,A)1
+-move(Table,A,B)0 on(Table,B)1
+-move(Table,A,B)0 -clear(B)1
+-move(Table,A,B)0 clear(A)1
+-move(Table,A,C)0 on(Table,A)0
+-move(Table,A,C)0 clear(Table)0
+-move(Table,A,C)0 clear(C)0
+-move(Table,A,C)0 -on(Table,A)1
+-move(Table,A,C)0 on(Table,C)1
+-move(Table,A,C)0 -clear(C)1
+-move(Table,A,C)0 clear(A)1
+-move(Table,B,A)0 on(Table,B)0
+-move(Table,B,A)0 clear(Table)0
+-move(Table,B,A)0 clear(A)0
+-move(Table,B,A)0 -on(Table,B)1
+-move(Table,B,A)0 on(Table,A)1
+-move(Table,B,A)0 -clear(A)1
+-move(Table,B,A)0 clear(B)1
+-move(Table,B,C)0 on(Table,B)0
+-move(Table,B,C)0 clear(Table)0
+-move(Table,B,C)0 clear(C)0
+-move(Table,B,C)0 -on(Table,B)1
+-move(Table,B,C)0 on(Table,C)1
+-move(Table,B,C)0 -clear(C)1
+-move(Table,B,C)0 clear(B)1
+-move(Table,C,A)0 on(Table,C)0
+-move(Table,C,A)0 clear(Table)0
+-move(Table,C,A)0 clear(A)0
+-move(Table,C,A)0 -on(Table,C)1
+-move(Table,C,A)0 on(Table,A)1
+-move(Table,C,A)0 -clear(A)1
+-move(Table,C,A)0 clear(C)1
+-move(Table,C,B)0 on(Table,C)0
+-move(Table,C,B)0 clear(Table)0
+-move(Table,C,B)0 clear(B)0
+-move(Table,C,B)0 -on(Table,C)1
+-move(Table,C,B)0 on(Table,B)1
+-move(Table,C,B)0 -clear(B)1
+-move(Table,C,B)0 clear(C)1
+-move2table(A,B)0 on(A,B)0
+-move2table(A,B)0 clear(A)0
+-move2table(A,B)0 -on(A,B)1
+-move2table(A,B)0 on(A,A)1
+-move2table(A,B)0 clear(B)1
+-move2table(A,C)0 on(A,C)0
+-move2table(A,C)0 clear(A)0
+-move2table(A,C)0 -on(A,C)1
+-move2table(A,C)0 on(A,A)1
+-move2table(A,C)0 clear(C)1
+-move2table(A,Table)0 on(A,Table)0
+-move2table(A,Table)0 clear(A)0
+-move2table(A,Table)0 -on(A,Table)1
+-move2table(A,Table)0 on(A,A)1
+-move2table(A,Table)0 clear(Table)1
+-move2table(B,A)0 on(B,A)0
+-move2table(B,A)0 clear(B)0
+-move2table(B,A)0 -on(B,A)1
+-move2table(B,A)0 on(B,B)1
+-move2table(B,A)0 clear(A)1
+-move2table(B,C)0 on(B,C)0
+-move2table(B,C)0 clear(B)0
+-move2table(B,C)0 -on(B,C)1
+-move2table(B,C)0 on(B,B)1
+-move2table(B,C)0 clear(C)1
+-move2table(B,Table)0 on(B,Table)0
+-move2table(B,Table)0 clear(B)0
+-move2table(B,Table)0 -on(B,Table)1
+-move2table(B,Table)0 on(B,B)1
+-move2table(B,Table)0 clear(Table)1
+-move2table(C,A)0 on(C,A)0
+-move2table(C,A)0 clear(C)0
+-move2table(C,A)0 -on(C,A)1
+-move2table(C,A)0 on(C,C)1
+-move2table(C,A)0 clear(A)1
+-move2table(C,B)0 on(C,B)0
+-move2table(C,B)0 clear(C)0
+-move2table(C,B)0 -on(C,B)1
+-move2table(C,B)0 on(C,C)1
+-move2table(C,B)0 clear(B)1
+-move2table(C,Table)0 on(C,Table)0
+-move2table(C,Table)0 clear(C)0
+-move2table(C,Table)0 -on(C,Table)1
+-move2table(C,Table)0 on(C,C)1
+-move2table(C,Table)0 clear(Table)1
+-move2table(Table,A)0 on(Table,A)0
+-move2table(Table,A)0 clear(Table)0
+-move2table(Table,A)0 -on(Table,A)1
+-move2table(Table,A)0 on(Table,Table)1
+-move2table(Table,A)0 clear(A)1
+-move2table(Table,B)0 on(Table,B)0
+-move2table(Table,B)0 clear(Table)0
+-move2table(Table,B)0 -on(Table,B)1
+-move2table(Table,B)0 on(Table,Table)1
+-move2table(Table,B)0 clear(B)1
+-move2table(Table,C)0 on(Table,C)0
+-move2table(Table,C)0 clear(Table)0
+-move2table(Table,C)0 -on(Table,C)1
+-move2table(Table,C)0 on(Table,Table)1
+-move2table(Table,C)0 clear(C)1
+on(A,Table)0 -move(A,B,C)0 -on(A,Table)1
+on(B,A)0 -move(A,B,C)0 -on(B,A)1
+on(B,C)0 -move(A,B,C)0 -on(B,C)1
+on(B,Table)0 -move(A,B,C)0 -on(B,Table)1
+on(C,A)0 -move(A,B,C)0 -on(C,A)1
+on(C,B)0 -move(A,B,C)0 -on(C,B)1
+on(C,Table)0 -move(A,B,C)0 -on(C,Table)1
+on(Table,A)0 -move(A,B,C)0 -on(Table,A)1
+on(Table,B)0 -move(A,B,C)0 -on(Table,B)1
+on(Table,C)0 -move(A,B,C)0 -on(Table,C)1
+clear(A)0 -move(A,B,C)0 -clear(A)1
+clear(Table)0 -move(A,B,C)0 -clear(Table)1
+-on(A,Table)0 -move(A,B,C)0 on(A,Table)1
+-on(B,A)0 -move(A,B,C)0 on(B,A)1
+-on(B,C)0 -move(A,B,C)0 on(B,C)1
+-on(B,Table)0 -move(A,B,C)0 on(B,Table)1
+-on(C,A)0 -move(A,B,C)0 on(C,A)1
+-on(C,B)0 -move(A,B,C)0 on(C,B)1
+-on(C,Table)0 -move(A,B,C)0 on(C,Table)1
+-on(Table,A)0 -move(A,B,C)0 on(Table,A)1
+-on(Table,B)0 -move(A,B,C)0 on(Table,B)1
+-on(Table,C)0 -move(A,B,C)0 on(Table,C)1
+-clear(A)0 -move(A,B,C)0 clear(A)1
+-clear(Table)0 -move(A,B,C)0 clear(Table)1
+on(A,C)0 -move(A,B,Table)0 -on(A,C)1
+on(B,A)0 -move(A,B,Table)0 -on(B,A)1
+on(B,C)0 -move(A,B,Table)0 -on(B,C)1
+on(B,Table)0 -move(A,B,Table)0 -on(B,Table)1
+on(C,A)0 -move(A,B,Table)0 -on(C,A)1
+on(C,B)0 -move(A,B,Table)0 -on(C,B)1
+on(C,Table)0 -move(A,B,Table)0 -on(C,Table)1
+on(Table,A)0 -move(A,B,Table)0 -on(Table,A)1
+on(Table,B)0 -move(A,B,Table)0 -on(Table,B)1
+on(Table,C)0 -move(A,B,Table)0 -on(Table,C)1
+clear(A)0 -move(A,B,Table)0 -clear(A)1
+clear(C)0 -move(A,B,Table)0 -clear(C)1
+-on(A,C)0 -move(A,B,Table)0 on(A,C)1
+-on(B,A)0 -move(A,B,Table)0 on(B,A)1
+-on(B,C)0 -move(A,B,Table)0 on(B,C)1
+-on(B,Table)0 -move(A,B,Table)0 on(B,Table)1
+-on(C,A)0 -move(A,B,Table)0 on(C,A)1
+-on(C,B)0 -move(A,B,Table)0 on(C,B)1
+-on(C,Table)0 -move(A,B,Table)0 on(C,Table)1
+-on(Table,A)0 -move(A,B,Table)0 on(Table,A)1
+-on(Table,B)0 -move(A,B,Table)0 on(Table,B)1
+-on(Table,C)0 -move(A,B,Table)0 on(Table,C)1
+-clear(A)0 -move(A,B,Table)0 clear(A)1
+-clear(C)0 -move(A,B,Table)0 clear(C)1
+on(A,Table)0 -move(A,C,B)0 -on(A,Table)1
+on(B,A)0 -move(A,C,B)0 -on(B,A)1
+on(B,C)0 -move(A,C,B)0 -on(B,C)1
+on(B,Table)0 -move(A,C,B)0 -on(B,Table)1
+on(C,A)0 -move(A,C,B)0 -on(C,A)1
+on(C,B)0 -move(A,C,B)0 -on(C,B)1
+on(C,Table)0 -move(A,C,B)0 -on(C,Table)1
+on(Table,A)0 -move(A,C,B)0 -on(Table,A)1
+on(Table,B)0 -move(A,C,B)0 -on(Table,B)1
+on(Table,C)0 -move(A,C,B)0 -on(Table,C)1
+clear(A)0 -move(A,C,B)0 -clear(A)1
+clear(Table)0 -move(A,C,B)0 -clear(Table)1
+-on(A,Table)0 -move(A,C,B)0 on(A,Table)1
+-on(B,A)0 -move(A,C,B)0 on(B,A)1
+-on(B,C)0 -move(A,C,B)0 on(B,C)1
+-on(B,Table)0 -move(A,C,B)0 on(B,Table)1
+-on(C,A)0 -move(A,C,B)0 on(C,A)1
+-on(C,B)0 -move(A,C,B)0 on(C,B)1
+-on(C,Table)0 -move(A,C,B)0 on(C,Table)1
+-on(Table,A)0 -move(A,C,B)0 on(Table,A)1
+-on(Table,B)0 -move(A,C,B)0 on(Table,B)1
+-on(Table,C)0 -move(A,C,B)0 on(Table,C)1
+-clear(A)0 -move(A,C,B)0 clear(A)1
+-clear(Table)0 -move(A,C,B)0 clear(Table)1
+on(A,B)0 -move(A,C,Table)0 -on(A,B)1
+on(B,A)0 -move(A,C,Table)0 -on(B,A)1
+on(B,C)0 -move(A,C,Table)0 -on(B,C)1
+on(B,Table)0 -move(A,C,Table)0 -on(B,Table)1
+on(C,A)0 -move(A,C,Table)0 -on(C,A)1
+on(C,B)0 -move(A,C,Table)0 -on(C,B)1
+on(C,Table)0 -move(A,C,Table)0 -on(C,Table)1
+on(Table,A)0 -move(A,C,Table)0 -on(Table,A)1
+on(Table,B)0 -move(A,C,Table)0 -on(Table,B)1
+on(Table,C)0 -move(A,C,Table)0 -on(Table,C)1
+clear(A)0 -move(A,C,Table)0 -clear(A)1
+clear(B)0 -move(A,C,Table)0 -clear(B)1
+-on(A,B)0 -move(A,C,Table)0 on(A,B)1
+-on(B,A)0 -move(A,C,Table)0 on(B,A)1
+-on(B,C)0 -move(A,C,Table)0 on(B,C)1
+-on(B,Table)0 -move(A,C,Table)0 on(B,Table)1
+-on(C,A)0 -move(A,C,Table)0 on(C,A)1
+-on(C,B)0 -move(A,C,Table)0 on(C,B)1
+-on(C,Table)0 -move(A,C,Table)0 on(C,Table)1
+-on(Table,A)0 -move(A,C,Table)0 on(Table,A)1
+-on(Table,B)0 -move(A,C,Table)0 on(Table,B)1
+-on(Table,C)0 -move(A,C,Table)0 on(Table,C)1
+-clear(A)0 -move(A,C,Table)0 clear(A)1
+-clear(B)0 -move(A,C,Table)0 clear(B)1
+on(A,C)0 -move(A,Table,B)0 -on(A,C)1
+on(B,A)0 -move(A,Table,B)0 -on(B,A)1
+on(B,C)0 -move(A,Table,B)0 -on(B,C)1
+on(B,Table)0 -move(A,Table,B)0 -on(B,Table)1
+on(C,A)0 -move(A,Table,B)0 -on(C,A)1
+on(C,B)0 -move(A,Table,B)0 -on(C,B)1
+on(C,Table)0 -move(A,Table,B)0 -on(C,Table)1
+on(Table,A)0 -move(A,Table,B)0 -on(Table,A)1
+on(Table,B)0 -move(A,Table,B)0 -on(Table,B)1
+on(Table,C)0 -move(A,Table,B)0 -on(Table,C)1
+clear(A)0 -move(A,Table,B)0 -clear(A)1
+clear(C)0 -move(A,Table,B)0 -clear(C)1
+-on(A,C)0 -move(A,Table,B)0 on(A,C)1
+-on(B,A)0 -move(A,Table,B)0 on(B,A)1
+-on(B,C)0 -move(A,Table,B)0 on(B,C)1
+-on(B,Table)0 -move(A,Table,B)0 on(B,Table)1
+-on(C,A)0 -move(A,Table,B)0 on(C,A)1
+-on(C,B)0 -move(A,Table,B)0 on(C,B)1
+-on(C,Table)0 -move(A,Table,B)0 on(C,Table)1
+-on(Table,A)0 -move(A,Table,B)0 on(Table,A)1
+-on(Table,B)0 -move(A,Table,B)0 on(Table,B)1
+-on(Table,C)0 -move(A,Table,B)0 on(Table,C)1
+-clear(A)0 -move(A,Table,B)0 clear(A)1
+-clear(C)0 -move(A,Table,B)0 clear(C)1
+on(A,B)0 -move(A,Table,C)0 -on(A,B)1
+on(B,A)0 -move(A,Table,C)0 -on(B,A)1
+on(B,C)0 -move(A,Table,C)0 -on(B,C)1
+on(B,Table)0 -move(A,Table,C)0 -on(B,Table)1
+on(C,A)0 -move(A,Table,C)0 -on(C,A)1
+on(C,B)0 -move(A,Table,C)0 -on(C,B)1
+on(C,Table)0 -move(A,Table,C)0 -on(C,Table)1
+on(Table,A)0 -move(A,Table,C)0 -on(Table,A)1
+on(Table,B)0 -move(A,Table,C)0 -on(Table,B)1
+on(Table,C)0 -move(A,Table,C)0 -on(Table,C)1
+clear(A)0 -move(A,Table,C)0 -clear(A)1
+clear(B)0 -move(A,Table,C)0 -clear(B)1
+-on(A,B)0 -move(A,Table,C)0 on(A,B)1
+-on(B,A)0 -move(A,Table,C)0 on(B,A)1
+-on(B,C)0 -move(A,Table,C)0 on(B,C)1
+-on(B,Table)0 -move(A,Table,C)0 on(B,Table)1
+-on(C,A)0 -move(A,Table,C)0 on(C,A)1
+-on(C,B)0 -move(A,Table,C)0 on(C,B)1
+-on(C,Table)0 -move(A,Table,C)0 on(C,Table)1
+-on(Table,A)0 -move(A,Table,C)0 on(Table,A)1
+-on(Table,B)0 -move(A,Table,C)0 on(Table,B)1
+-on(Table,C)0 -move(A,Table,C)0 on(Table,C)1
+-clear(A)0 -move(A,Table,C)0 clear(A)1
+-clear(B)0 -move(A,Table,C)0 clear(B)1
+on(A,B)0 -move(B,A,C)0 -on(A,B)1
+on(A,C)0 -move(B,A,C)0 -on(A,C)1
+on(A,Table)0 -move(B,A,C)0 -on(A,Table)1
+on(B,Table)0 -move(B,A,C)0 -on(B,Table)1
+on(C,A)0 -move(B,A,C)0 -on(C,A)1
+on(C,B)0 -move(B,A,C)0 -on(C,B)1
+on(C,Table)0 -move(B,A,C)0 -on(C,Table)1
+on(Table,A)0 -move(B,A,C)0 -on(Table,A)1
+on(Table,B)0 -move(B,A,C)0 -on(Table,B)1
+on(Table,C)0 -move(B,A,C)0 -on(Table,C)1
+clear(B)0 -move(B,A,C)0 -clear(B)1
+clear(Table)0 -move(B,A,C)0 -clear(Table)1
+-on(A,B)0 -move(B,A,C)0 on(A,B)1
+-on(A,C)0 -move(B,A,C)0 on(A,C)1
+-on(A,Table)0 -move(B,A,C)0 on(A,Table)1
+-on(B,Table)0 -move(B,A,C)0 on(B,Table)1
+-on(C,A)0 -move(B,A,C)0 on(C,A)1
+-on(C,B)0 -move(B,A,C)0 on(C,B)1
+-on(C,Table)0 -move(B,A,C)0 on(C,Table)1
+-on(Table,A)0 -move(B,A,C)0 on(Table,A)1
+-on(Table,B)0 -move(B,A,C)0 on(Table,B)1
+-on(Table,C)0 -move(B,A,C)0 on(Table,C)1
+-clear(B)0 -move(B,A,C)0 clear(B)1
+-clear(Table)0 -move(B,A,C)0 clear(Table)1
+on(A,B)0 -move(B,A,Table)0 -on(A,B)1
+on(A,C)0 -move(B,A,Table)0 -on(A,C)1
+on(A,Table)0 -move(B,A,Table)0 -on(A,Table)1
+on(B,C)0 -move(B,A,Table)0 -on(B,C)1
+on(C,A)0 -move(B,A,Table)0 -on(C,A)1
+on(C,B)0 -move(B,A,Table)0 -on(C,B)1
+on(C,Table)0 -move(B,A,Table)0 -on(C,Table)1
+on(Table,A)0 -move(B,A,Table)0 -on(Table,A)1
+on(Table,B)0 -move(B,A,Table)0 -on(Table,B)1
+on(Table,C)0 -move(B,A,Table)0 -on(Table,C)1
+clear(B)0 -move(B,A,Table)0 -clear(B)1
+clear(C)0 -move(B,A,Table)0 -clear(C)1
+-on(A,B)0 -move(B,A,Table)0 on(A,B)1
+-on(A,C)0 -move(B,A,Table)0 on(A,C)1
+-on(A,Table)0 -move(B,A,Table)0 on(A,Table)1
+-on(B,C)0 -move(B,A,Table)0 on(B,C)1
+-on(C,A)0 -move(B,A,Table)0 on(C,A)1
+-on(C,B)0 -move(B,A,Table)0 on(C,B)1
+-on(C,Table)0 -move(B,A,Table)0 on(C,Table)1
+-on(Table,A)0 -move(B,A,Table)0 on(Table,A)1
+-on(Table,B)0 -move(B,A,Table)0 on(Table,B)1
+-on(Table,C)0 -move(B,A,Table)0 on(Table,C)1
+-clear(B)0 -move(B,A,Table)0 clear(B)1
+-clear(C)0 -move(B,A,Table)0 clear(C)1
+on(A,B)0 -move(B,C,A)0 -on(A,B)1
+on(A,C)0 -move(B,C,A)0 -on(A,C)1
+on(A,Table)0 -move(B,C,A)0 -on(A,Table)1
+on(B,Table)0 -move(B,C,A)0 -on(B,Table)1
+on(C,A)0 -move(B,C,A)0 -on(C,A)1
+on(C,B)0 -move(B,C,A)0 -on(C,B)1
+on(C,Table)0 -move(B,C,A)0 -on(C,Table)1
+on(Table,A)0 -move(B,C,A)0 -on(Table,A)1
+on(Table,B)0 -move(B,C,A)0 -on(Table,B)1
+on(Table,C)0 -move(B,C,A)0 -on(Table,C)1
+clear(B)0 -move(B,C,A)0 -clear(B)1
+clear(Table)0 -move(B,C,A)0 -clear(Table)1
+-on(A,B)0 -move(B,C,A)0 on(A,B)1
+-on(A,C)0 -move(B,C,A)0 on(A,C)1
+-on(A,Table)0 -move(B,C,A)0 on(A,Table)1
+-on(B,Table)0 -move(B,C,A)0 on(B,Table)1
+-on(C,A)0 -move(B,C,A)0 on(C,A)1
+-on(C,B)0 -move(B,C,A)0 on(C,B)1
+-on(C,Table)0 -move(B,C,A)0 on(C,Table)1
+-on(Table,A)0 -move(B,C,A)0 on(Table,A)1
+-on(Table,B)0 -move(B,C,A)0 on(Table,B)1
+-on(Table,C)0 -move(B,C,A)0 on(Table,C)1
+-clear(B)0 -move(B,C,A)0 clear(B)1
+-clear(Table)0 -move(B,C,A)0 clear(Table)1
+on(A,B)0 -move(B,C,Table)0 -on(A,B)1
+on(A,C)0 -move(B,C,Table)0 -on(A,C)1
+on(A,Table)0 -move(B,C,Table)0 -on(A,Table)1
+on(B,A)0 -move(B,C,Table)0 -on(B,A)1
+on(C,A)0 -move(B,C,Table)0 -on(C,A)1
+on(C,B)0 -move(B,C,Table)0 -on(C,B)1
+on(C,Table)0 -move(B,C,Table)0 -on(C,Table)1
+on(Table,A)0 -move(B,C,Table)0 -on(Table,A)1
+on(Table,B)0 -move(B,C,Table)0 -on(Table,B)1
+on(Table,C)0 -move(B,C,Table)0 -on(Table,C)1
+clear(A)0 -move(B,C,Table)0 -clear(A)1
+clear(B)0 -move(B,C,Table)0 -clear(B)1
+-on(A,B)0 -move(B,C,Table)0 on(A,B)1
+-on(A,C)0 -move(B,C,Table)0 on(A,C)1
+-on(A,Table)0 -move(B,C,Table)0 on(A,Table)1
+-on(B,A)0 -move(B,C,Table)0 on(B,A)1
+-on(C,A)0 -move(B,C,Table)0 on(C,A)1
+-on(C,B)0 -move(B,C,Table)0 on(C,B)1
+-on(C,Table)0 -move(B,C,Table)0 on(C,Table)1
+-on(Table,A)0 -move(B,C,Table)0 on(Table,A)1
+-on(Table,B)0 -move(B,C,Table)0 on(Table,B)1
+-on(Table,C)0 -move(B,C,Table)0 on(Table,C)1
+-clear(A)0 -move(B,C,Table)0 clear(A)1
+-clear(B)0 -move(B,C,Table)0 clear(B)1
+on(A,B)0 -move(B,Table,A)0 -on(A,B)1
+on(A,C)0 -move(B,Table,A)0 -on(A,C)1
+on(A,Table)0 -move(B,Table,A)0 -on(A,Table)1
+on(B,C)0 -move(B,Table,A)0 -on(B,C)1
+on(C,A)0 -move(B,Table,A)0 -on(C,A)1
+on(C,B)0 -move(B,Table,A)0 -on(C,B)1
+on(C,Table)0 -move(B,Table,A)0 -on(C,Table)1
+on(Table,A)0 -move(B,Table,A)0 -on(Table,A)1
+on(Table,B)0 -move(B,Table,A)0 -on(Table,B)1
+on(Table,C)0 -move(B,Table,A)0 -on(Table,C)1
+clear(B)0 -move(B,Table,A)0 -clear(B)1
+clear(C)0 -move(B,Table,A)0 -clear(C)1
+-on(A,B)0 -move(B,Table,A)0 on(A,B)1
+-on(A,C)0 -move(B,Table,A)0 on(A,C)1
+-on(A,Table)0 -move(B,Table,A)0 on(A,Table)1
+-on(B,C)0 -move(B,Table,A)0 on(B,C)1
+-on(C,A)0 -move(B,Table,A)0 on(C,A)1
+-on(C,B)0 -move(B,Table,A)0 on(C,B)1
+-on(C,Table)0 -move(B,Table,A)0 on(C,Table)1
+-on(Table,A)0 -move(B,Table,A)0 on(Table,A)1
+-on(Table,B)0 -move(B,Table,A)0 on(Table,B)1
+-on(Table,C)0 -move(B,Table,A)0 on(Table,C)1
+-clear(B)0 -move(B,Table,A)0 clear(B)1
+-clear(C)0 -move(B,Table,A)0 clear(C)1
+on(A,B)0 -move(B,Table,C)0 -on(A,B)1
+on(A,C)0 -move(B,Table,C)0 -on(A,C)1
+on(A,Table)0 -move(B,Table,C)0 -on(A,Table)1
+on(B,A)0 -move(B,Table,C)0 -on(B,A)1
+on(C,A)0 -move(B,Table,C)0 -on(C,A)1
+on(C,B)0 -move(B,Table,C)0 -on(C,B)1
+on(C,Table)0 -move(B,Table,C)0 -on(C,Table)1
+on(Table,A)0 -move(B,Table,C)0 -on(Table,A)1
+on(Table,B)0 -move(B,Table,C)0 -on(Table,B)1
+on(Table,C)0 -move(B,Table,C)0 -on(Table,C)1
+clear(A)0 -move(B,Table,C)0 -clear(A)1
+clear(B)0 -move(B,Table,C)0 -clear(B)1
+-on(A,B)0 -move(B,Table,C)0 on(A,B)1
+-on(A,C)0 -move(B,Table,C)0 on(A,C)1
+-on(A,Table)0 -move(B,Table,C)0 on(A,Table)1
+-on(B,A)0 -move(B,Table,C)0 on(B,A)1
+-on(C,A)0 -move(B,Table,C)0 on(C,A)1
+-on(C,B)0 -move(B,Table,C)0 on(C,B)1
+-on(C,Table)0 -move(B,Table,C)0 on(C,Table)1
+-on(Table,A)0 -move(B,Table,C)0 on(Table,A)1
+-on(Table,B)0 -move(B,Table,C)0 on(Table,B)1
+-on(Table,C)0 -move(B,Table,C)0 on(Table,C)1
+-clear(A)0 -move(B,Table,C)0 clear(A)1
+-clear(B)0 -move(B,Table,C)0 clear(B)1
+on(A,B)0 -move(C,A,B)0 -on(A,B)1
+on(A,C)0 -move(C,A,B)0 -on(A,C)1
+on(A,Table)0 -move(C,A,B)0 -on(A,Table)1
+on(B,A)0 -move(C,A,B)0 -on(B,A)1
+on(B,C)0 -move(C,A,B)0 -on(B,C)1
+on(B,Table)0 -move(C,A,B)0 -on(B,Table)1
+on(C,Table)0 -move(C,A,B)0 -on(C,Table)1
+on(Table,A)0 -move(C,A,B)0 -on(Table,A)1
+on(Table,B)0 -move(C,A,B)0 -on(Table,B)1
+on(Table,C)0 -move(C,A,B)0 -on(Table,C)1
+clear(C)0 -move(C,A,B)0 -clear(C)1
+clear(Table)0 -move(C,A,B)0 -clear(Table)1
+-on(A,B)0 -move(C,A,B)0 on(A,B)1
+-on(A,C)0 -move(C,A,B)0 on(A,C)1
+-on(A,Table)0 -move(C,A,B)0 on(A,Table)1
+-on(B,A)0 -move(C,A,B)0 on(B,A)1
+-on(B,C)0 -move(C,A,B)0 on(B,C)1
+-on(B,Table)0 -move(C,A,B)0 on(B,Table)1
+-on(C,Table)0 -move(C,A,B)0 on(C,Table)1
+-on(Table,A)0 -move(C,A,B)0 on(Table,A)1
+-on(Table,B)0 -move(C,A,B)0 on(Table,B)1
+-on(Table,C)0 -move(C,A,B)0 on(Table,C)1
+-clear(C)0 -move(C,A,B)0 clear(C)1
+-clear(Table)0 -move(C,A,B)0 clear(Table)1
+on(A,B)0 -move(C,A,Table)0 -on(A,B)1
+on(A,C)0 -move(C,A,Table)0 -on(A,C)1
+on(A,Table)0 -move(C,A,Table)0 -on(A,Table)1
+on(B,A)0 -move(C,A,Table)0 -on(B,A)1
+on(B,C)0 -move(C,A,Table)0 -on(B,C)1
+on(B,Table)0 -move(C,A,Table)0 -on(B,Table)1
+on(C,B)0 -move(C,A,Table)0 -on(C,B)1
+on(Table,A)0 -move(C,A,Table)0 -on(Table,A)1
+on(Table,B)0 -move(C,A,Table)0 -on(Table,B)1
+on(Table,C)0 -move(C,A,Table)0 -on(Table,C)1
+clear(B)0 -move(C,A,Table)0 -clear(B)1
+clear(C)0 -move(C,A,Table)0 -clear(C)1
+-on(A,B)0 -move(C,A,Table)0 on(A,B)1
+-on(A,C)0 -move(C,A,Table)0 on(A,C)1
+-on(A,Table)0 -move(C,A,Table)0 on(A,Table)1
+-on(B,A)0 -move(C,A,Table)0 on(B,A)1
+-on(B,C)0 -move(C,A,Table)0 on(B,C)1
+-on(B,Table)0 -move(C,A,Table)0 on(B,Table)1
+-on(C,B)0 -move(C,A,Table)0 on(C,B)1
+-on(Table,A)0 -move(C,A,Table)0 on(Table,A)1
+-on(Table,B)0 -move(C,A,Table)0 on(Table,B)1
+-on(Table,C)0 -move(C,A,Table)0 on(Table,C)1
+-clear(B)0 -move(C,A,Table)0 clear(B)1
+-clear(C)0 -move(C,A,Table)0 clear(C)1
+on(A,B)0 -move(C,B,A)0 -on(A,B)1
+on(A,C)0 -move(C,B,A)0 -on(A,C)1
+on(A,Table)0 -move(C,B,A)0 -on(A,Table)1
+on(B,A)0 -move(C,B,A)0 -on(B,A)1
+on(B,C)0 -move(C,B,A)0 -on(B,C)1
+on(B,Table)0 -move(C,B,A)0 -on(B,Table)1
+on(C,Table)0 -move(C,B,A)0 -on(C,Table)1
+on(Table,A)0 -move(C,B,A)0 -on(Table,A)1
+on(Table,B)0 -move(C,B,A)0 -on(Table,B)1
+on(Table,C)0 -move(C,B,A)0 -on(Table,C)1
+clear(C)0 -move(C,B,A)0 -clear(C)1
+clear(Table)0 -move(C,B,A)0 -clear(Table)1
+-on(A,B)0 -move(C,B,A)0 on(A,B)1
+-on(A,C)0 -move(C,B,A)0 on(A,C)1
+-on(A,Table)0 -move(C,B,A)0 on(A,Table)1
+-on(B,A)0 -move(C,B,A)0 on(B,A)1
+-on(B,C)0 -move(C,B,A)0 on(B,C)1
+-on(B,Table)0 -move(C,B,A)0 on(B,Table)1
+-on(C,Table)0 -move(C,B,A)0 on(C,Table)1
+-on(Table,A)0 -move(C,B,A)0 on(Table,A)1
+-on(Table,B)0 -move(C,B,A)0 on(Table,B)1
+-on(Table,C)0 -move(C,B,A)0 on(Table,C)1
+-clear(C)0 -move(C,B,A)0 clear(C)1
+-clear(Table)0 -move(C,B,A)0 clear(Table)1
+on(A,B)0 -move(C,B,Table)0 -on(A,B)1
+on(A,C)0 -move(C,B,Table)0 -on(A,C)1
+on(A,Table)0 -move(C,B,Table)0 -on(A,Table)1
+on(B,A)0 -move(C,B,Table)0 -on(B,A)1
+on(B,C)0 -move(C,B,Table)0 -on(B,C)1
+on(B,Table)0 -move(C,B,Table)0 -on(B,Table)1
+on(C,A)0 -move(C,B,Table)0 -on(C,A)1
+on(Table,A)0 -move(C,B,Table)0 -on(Table,A)1
+on(Table,B)0 -move(C,B,Table)0 -on(Table,B)1
+on(Table,C)0 -move(C,B,Table)0 -on(Table,C)1
+clear(A)0 -move(C,B,Table)0 -clear(A)1
+clear(C)0 -move(C,B,Table)0 -clear(C)1
+-on(A,B)0 -move(C,B,Table)0 on(A,B)1
+-on(A,C)0 -move(C,B,Table)0 on(A,C)1
+-on(A,Table)0 -move(C,B,Table)0 on(A,Table)1
+-on(B,A)0 -move(C,B,Table)0 on(B,A)1
+-on(B,C)0 -move(C,B,Table)0 on(B,C)1
+-on(B,Table)0 -move(C,B,Table)0 on(B,Table)1
+-on(C,A)0 -move(C,B,Table)0 on(C,A)1
+-on(Table,A)0 -move(C,B,Table)0 on(Table,A)1
+-on(Table,B)0 -move(C,B,Table)0 on(Table,B)1
+-on(Table,C)0 -move(C,B,Table)0 on(Table,C)1
+-clear(A)0 -move(C,B,Table)0 clear(A)1
+-clear(C)0 -move(C,B,Table)0 clear(C)1
+on(A,B)0 -move(C,Table,A)0 -on(A,B)1
+on(A,C)0 -move(C,Table,A)0 -on(A,C)1
+on(A,Table)0 -move(C,Table,A)0 -on(A,Table)1
+on(B,A)0 -move(C,Table,A)0 -on(B,A)1
+on(B,C)0 -move(C,Table,A)0 -on(B,C)1
+on(B,Table)0 -move(C,Table,A)0 -on(B,Table)1
+on(C,B)0 -move(C,Table,A)0 -on(C,B)1
+on(Table,A)0 -move(C,Table,A)0 -on(Table,A)1
+on(Table,B)0 -move(C,Table,A)0 -on(Table,B)1
+on(Table,C)0 -move(C,Table,A)0 -on(Table,C)1
+clear(B)0 -move(C,Table,A)0 -clear(B)1
+clear(C)0 -move(C,Table,A)0 -clear(C)1
+-on(A,B)0 -move(C,Table,A)0 on(A,B)1
+-on(A,C)0 -move(C,Table,A)0 on(A,C)1
+-on(A,Table)0 -move(C,Table,A)0 on(A,Table)1
+-on(B,A)0 -move(C,Table,A)0 on(B,A)1
+-on(B,C)0 -move(C,Table,A)0 on(B,C)1
+-on(B,Table)0 -move(C,Table,A)0 on(B,Table)1
+-on(C,B)0 -move(C,Table,A)0 on(C,B)1
+-on(Table,A)0 -move(C,Table,A)0 on(Table,A)1
+-on(Table,B)0 -move(C,Table,A)0 on(Table,B)1
+-on(Table,C)0 -move(C,Table,A)0 on(Table,C)1
+-clear(B)0 -move(C,Table,A)0 clear(B)1
+-clear(C)0 -move(C,Table,A)0 clear(C)1
+on(A,B)0 -move(C,Table,B)0 -on(A,B)1
+on(A,C)0 -move(C,Table,B)0 -on(A,C)1
+on(A,Table)0 -move(C,Table,B)0 -on(A,Table)1
+on(B,A)0 -move(C,Table,B)0 -on(B,A)1
+on(B,C)0 -move(C,Table,B)0 -on(B,C)1
+on(B,Table)0 -move(C,Table,B)0 -on(B,Table)1
+on(C,A)0 -move(C,Table,B)0 -on(C,A)1
+on(Table,A)0 -move(C,Table,B)0 -on(Table,A)1
+on(Table,B)0 -move(C,Table,B)0 -on(Table,B)1
+on(Table,C)0 -move(C,Table,B)0 -on(Table,C)1
+clear(A)0 -move(C,Table,B)0 -clear(A)1
+clear(C)0 -move(C,Table,B)0 -clear(C)1
+-on(A,B)0 -move(C,Table,B)0 on(A,B)1
+-on(A,C)0 -move(C,Table,B)0 on(A,C)1
+-on(A,Table)0 -move(C,Table,B)0 on(A,Table)1
+-on(B,A)0 -move(C,Table,B)0 on(B,A)1
+-on(B,C)0 -move(C,Table,B)0 on(B,C)1
+-on(B,Table)0 -move(C,Table,B)0 on(B,Table)1
+-on(C,A)0 -move(C,Table,B)0 on(C,A)1
+-on(Table,A)0 -move(C,Table,B)0 on(Table,A)1
+-on(Table,B)0 -move(C,Table,B)0 on(Table,B)1
+-on(Table,C)0 -move(C,Table,B)0 on(Table,C)1
+-clear(A)0 -move(C,Table,B)0 clear(A)1
+-clear(C)0 -move(C,Table,B)0 clear(C)1
+on(A,B)0 -move(Table,A,B)0 -on(A,B)1
+on(A,C)0 -move(Table,A,B)0 -on(A,C)1
+on(A,Table)0 -move(Table,A,B)0 -on(A,Table)1
+on(B,A)0 -move(Table,A,B)0 -on(B,A)1
+on(B,C)0 -move(Table,A,B)0 -on(B,C)1
+on(B,Table)0 -move(Table,A,B)0 -on(B,Table)1
+on(C,A)0 -move(Table,A,B)0 -on(C,A)1
+on(C,B)0 -move(Table,A,B)0 -on(C,B)1
+on(C,Table)0 -move(Table,A,B)0 -on(C,Table)1
+on(Table,C)0 -move(Table,A,B)0 -on(Table,C)1
+clear(C)0 -move(Table,A,B)0 -clear(C)1
+clear(Table)0 -move(Table,A,B)0 -clear(Table)1
+-on(A,B)0 -move(Table,A,B)0 on(A,B)1
+-on(A,C)0 -move(Table,A,B)0 on(A,C)1
+-on(A,Table)0 -move(Table,A,B)0 on(A,Table)1
+-on(B,A)0 -move(Table,A,B)0 on(B,A)1
+-on(B,C)0 -move(Table,A,B)0 on(B,C)1
+-on(B,Table)0 -move(Table,A,B)0 on(B,Table)1
+-on(C,A)0 -move(Table,A,B)0 on(C,A)1
+-on(C,B)0 -move(Table,A,B)0 on(C,B)1
+-on(C,Table)0 -move(Table,A,B)0 on(C,Table)1
+-on(Table,C)0 -move(Table,A,B)0 on(Table,C)1
+-clear(C)0 -move(Table,A,B)0 clear(C)1
+-clear(Table)0 -move(Table,A,B)0 clear(Table)1
+on(A,B)0 -move(Table,A,C)0 -on(A,B)1
+on(A,C)0 -move(Table,A,C)0 -on(A,C)1
+on(A,Table)0 -move(Table,A,C)0 -on(A,Table)1
+on(B,A)0 -move(Table,A,C)0 -on(B,A)1
+on(B,C)0 -move(Table,A,C)0 -on(B,C)1
+on(B,Table)0 -move(Table,A,C)0 -on(B,Table)1
+on(C,A)0 -move(Table,A,C)0 -on(C,A)1
+on(C,B)0 -move(Table,A,C)0 -on(C,B)1
+on(C,Table)0 -move(Table,A,C)0 -on(C,Table)1
+on(Table,B)0 -move(Table,A,C)0 -on(Table,B)1
+clear(B)0 -move(Table,A,C)0 -clear(B)1
+clear(Table)0 -move(Table,A,C)0 -clear(Table)1
+-on(A,B)0 -move(Table,A,C)0 on(A,B)1
+-on(A,C)0 -move(Table,A,C)0 on(A,C)1
+-on(A,Table)0 -move(Table,A,C)0 on(A,Table)1
+-on(B,A)0 -move(Table,A,C)0 on(B,A)1
+-on(B,C)0 -move(Table,A,C)0 on(B,C)1
+-on(B,Table)0 -move(Table,A,C)0 on(B,Table)1
+-on(C,A)0 -move(Table,A,C)0 on(C,A)1
+-on(C,B)0 -move(Table,A,C)0 on(C,B)1
+-on(C,Table)0 -move(Table,A,C)0 on(C,Table)1
+-on(Table,B)0 -move(Table,A,C)0 on(Table,B)1
+-clear(B)0 -move(Table,A,C)0 clear(B)1
+-clear(Table)0 -move(Table,A,C)0 clear(Table)1
+on(A,B)0 -move(Table,B,A)0 -on(A,B)1
+on(A,C)0 -move(Table,B,A)0 -on(A,C)1
+on(A,Table)0 -move(Table,B,A)0 -on(A,Table)1
+on(B,A)0 -move(Table,B,A)0 -on(B,A)1
+on(B,C)0 -move(Table,B,A)0 -on(B,C)1
+on(B,Table)0 -move(Table,B,A)0 -on(B,Table)1
+on(C,A)0 -move(Table,B,A)0 -on(C,A)1
+on(C,B)0 -move(Table,B,A)0 -on(C,B)1
+on(C,Table)0 -move(Table,B,A)0 -on(C,Table)1
+on(Table,C)0 -move(Table,B,A)0 -on(Table,C)1
+clear(C)0 -move(Table,B,A)0 -clear(C)1
+clear(Table)0 -move(Table,B,A)0 -clear(Table)1
+-on(A,B)0 -move(Table,B,A)0 on(A,B)1
+-on(A,C)0 -move(Table,B,A)0 on(A,C)1
+-on(A,Table)0 -move(Table,B,A)0 on(A,Table)1
+-on(B,A)0 -move(Table,B,A)0 on(B,A)1
+-on(B,C)0 -move(Table,B,A)0 on(B,C)1
+-on(B,Table)0 -move(Table,B,A)0 on(B,Table)1
+-on(C,A)0 -move(Table,B,A)0 on(C,A)1
+-on(C,B)0 -move(Table,B,A)0 on(C,B)1
+-on(C,Table)0 -move(Table,B,A)0 on(C,Table)1
+-on(Table,C)0 -move(Table,B,A)0 on(Table,C)1
+-clear(C)0 -move(Table,B,A)0 clear(C)1
+-clear(Table)0 -move(Table,B,A)0 clear(Table)1
+on(A,B)0 -move(Table,B,C)0 -on(A,B)1
+on(A,C)0 -move(Table,B,C)0 -on(A,C)1
+on(A,Table)0 -move(Table,B,C)0 -on(A,Table)1
+on(B,A)0 -move(Table,B,C)0 -on(B,A)1
+on(B,C)0 -move(Table,B,C)0 -on(B,C)1
+on(B,Table)0 -move(Table,B,C)0 -on(B,Table)1
+on(C,A)0 -move(Table,B,C)0 -on(C,A)1
+on(C,B)0 -move(Table,B,C)0 -on(C,B)1
+on(C,Table)0 -move(Table,B,C)0 -on(C,Table)1
+on(Table,A)0 -move(Table,B,C)0 -on(Table,A)1
+clear(A)0 -move(Table,B,C)0 -clear(A)1
+clear(Table)0 -move(Table,B,C)0 -clear(Table)1
+-on(A,B)0 -move(Table,B,C)0 on(A,B)1
+-on(A,C)0 -move(Table,B,C)0 on(A,C)1
+-on(A,Table)0 -move(Table,B,C)0 on(A,Table)1
+-on(B,A)0 -move(Table,B,C)0 on(B,A)1
+-on(B,C)0 -move(Table,B,C)0 on(B,C)1
+-on(B,Table)0 -move(Table,B,C)0 on(B,Table)1
+-on(C,A)0 -move(Table,B,C)0 on(C,A)1
+-on(C,B)0 -move(Table,B,C)0 on(C,B)1
+-on(C,Table)0 -move(Table,B,C)0 on(C,Table)1
+-on(Table,A)0 -move(Table,B,C)0 on(Table,A)1
+-clear(A)0 -move(Table,B,C)0 clear(A)1
+-clear(Table)0 -move(Table,B,C)0 clear(Table)1
+on(A,B)0 -move(Table,C,A)0 -on(A,B)1
+on(A,C)0 -move(Table,C,A)0 -on(A,C)1
+on(A,Table)0 -move(Table,C,A)0 -on(A,Table)1
+on(B,A)0 -move(Table,C,A)0 -on(B,A)1
+on(B,C)0 -move(Table,C,A)0 -on(B,C)1
+on(B,Table)0 -move(Table,C,A)0 -on(B,Table)1
+on(C,A)0 -move(Table,C,A)0 -on(C,A)1
+on(C,B)0 -move(Table,C,A)0 -on(C,B)1
+on(C,Table)0 -move(Table,C,A)0 -on(C,Table)1
+on(Table,B)0 -move(Table,C,A)0 -on(Table,B)1
+clear(B)0 -move(Table,C,A)0 -clear(B)1
+clear(Table)0 -move(Table,C,A)0 -clear(Table)1
+-on(A,B)0 -move(Table,C,A)0 on(A,B)1
+-on(A,C)0 -move(Table,C,A)0 on(A,C)1
+-on(A,Table)0 -move(Table,C,A)0 on(A,Table)1
+-on(B,A)0 -move(Table,C,A)0 on(B,A)1
+-on(B,C)0 -move(Table,C,A)0 on(B,C)1
+-on(B,Table)0 -move(Table,C,A)0 on(B,Table)1
+-on(C,A)0 -move(Table,C,A)0 on(C,A)1
+-on(C,B)0 -move(Table,C,A)0 on(C,B)1
+-on(C,Table)0 -move(Table,C,A)0 on(C,Table)1
+-on(Table,B)0 -move(Table,C,A)0 on(Table,B)1
+-clear(B)0 -move(Table,C,A)0 clear(B)1
+-clear(Table)0 -move(Table,C,A)0 clear(Table)1
+on(A,B)0 -move(Table,C,B)0 -on(A,B)1
+on(A,C)0 -move(Table,C,B)0 -on(A,C)1
+on(A,Table)0 -move(Table,C,B)0 -on(A,Table)1
+on(B,A)0 -move(Table,C,B)0 -on(B,A)1
+on(B,C)0 -move(Table,C,B)0 -on(B,C)1
+on(B,Table)0 -move(Table,C,B)0 -on(B,Table)1
+on(C,A)0 -move(Table,C,B)0 -on(C,A)1
+on(C,B)0 -move(Table,C,B)0 -on(C,B)1
+on(C,Table)0 -move(Table,C,B)0 -on(C,Table)1
+on(Table,A)0 -move(Table,C,B)0 -on(Table,A)1
+clear(A)0 -move(Table,C,B)0 -clear(A)1
+clear(Table)0 -move(Table,C,B)0 -clear(Table)1
+-on(A,B)0 -move(Table,C,B)0 on(A,B)1
+-on(A,C)0 -move(Table,C,B)0 on(A,C)1
+-on(A,Table)0 -move(Table,C,B)0 on(A,Table)1
+-on(B,A)0 -move(Table,C,B)0 on(B,A)1
+-on(B,C)0 -move(Table,C,B)0 on(B,C)1
+-on(B,Table)0 -move(Table,C,B)0 on(B,Table)1
+-on(C,A)0 -move(Table,C,B)0 on(C,A)1
+-on(C,B)0 -move(Table,C,B)0 on(C,B)1
+-on(C,Table)0 -move(Table,C,B)0 on(C,Table)1
+-on(Table,A)0 -move(Table,C,B)0 on(Table,A)1
+-clear(A)0 -move(Table,C,B)0 clear(A)1
+-clear(Table)0 -move(Table,C,B)0 clear(Table)1
+on(A,C)0 -move2table(A,B)0 -on(A,C)1
+on(A,Table)0 -move2table(A,B)0 -on(A,Table)1
+on(B,A)0 -move2table(A,B)0 -on(B,A)1
+on(B,C)0 -move2table(A,B)0 -on(B,C)1
+on(B,Table)0 -move2table(A,B)0 -on(B,Table)1
+on(C,A)0 -move2table(A,B)0 -on(C,A)1
+on(C,B)0 -move2table(A,B)0 -on(C,B)1
+on(C,Table)0 -move2table(A,B)0 -on(C,Table)1
+on(Table,A)0 -move2table(A,B)0 -on(Table,A)1
+on(Table,B)0 -move2table(A,B)0 -on(Table,B)1
+on(Table,C)0 -move2table(A,B)0 -on(Table,C)1
+clear(A)0 -move2table(A,B)0 -clear(A)1
+clear(C)0 -move2table(A,B)0 -clear(C)1
+clear(Table)0 -move2table(A,B)0 -clear(Table)1
+-on(A,C)0 -move2table(A,B)0 on(A,C)1
+-on(A,Table)0 -move2table(A,B)0 on(A,Table)1
+-on(B,A)0 -move2table(A,B)0 on(B,A)1
+-on(B,C)0 -move2table(A,B)0 on(B,C)1
+-on(B,Table)0 -move2table(A,B)0 on(B,Table)1
+-on(C,A)0 -move2table(A,B)0 on(C,A)1
+-on(C,B)0 -move2table(A,B)0 on(C,B)1
+-on(C,Table)0 -move2table(A,B)0 on(C,Table)1
+-on(Table,A)0 -move2table(A,B)0 on(Table,A)1
+-on(Table,B)0 -move2table(A,B)0 on(Table,B)1
+-on(Table,C)0 -move2table(A,B)0 on(Table,C)1
+-clear(A)0 -move2table(A,B)0 clear(A)1
+-clear(C)0 -move2table(A,B)0 clear(C)1
+-clear(Table)0 -move2table(A,B)0 clear(Table)1
+on(A,B)0 -move2table(A,C)0 -on(A,B)1
+on(A,Table)0 -move2table(A,C)0 -on(A,Table)1
+on(B,A)0 -move2table(A,C)0 -on(B,A)1
+on(B,C)0 -move2table(A,C)0 -on(B,C)1
+on(B,Table)0 -move2table(A,C)0 -on(B,Table)1
+on(C,A)0 -move2table(A,C)0 -on(C,A)1
+on(C,B)0 -move2table(A,C)0 -on(C,B)1
+on(C,Table)0 -move2table(A,C)0 -on(C,Table)1
+on(Table,A)0 -move2table(A,C)0 -on(Table,A)1
+on(Table,B)0 -move2table(A,C)0 -on(Table,B)1
+on(Table,C)0 -move2table(A,C)0 -on(Table,C)1
+clear(A)0 -move2table(A,C)0 -clear(A)1
+clear(B)0 -move2table(A,C)0 -clear(B)1
+clear(Table)0 -move2table(A,C)0 -clear(Table)1
+-on(A,B)0 -move2table(A,C)0 on(A,B)1
+-on(A,Table)0 -move2table(A,C)0 on(A,Table)1
+-on(B,A)0 -move2table(A,C)0 on(B,A)1
+-on(B,C)0 -move2table(A,C)0 on(B,C)1
+-on(B,Table)0 -move2table(A,C)0 on(B,Table)1
+-on(C,A)0 -move2table(A,C)0 on(C,A)1
+-on(C,B)0 -move2table(A,C)0 on(C,B)1
+-on(C,Table)0 -move2table(A,C)0 on(C,Table)1
+-on(Table,A)0 -move2table(A,C)0 on(Table,A)1
+-on(Table,B)0 -move2table(A,C)0 on(Table,B)1
+-on(Table,C)0 -move2table(A,C)0 on(Table,C)1
+-clear(A)0 -move2table(A,C)0 clear(A)1
+-clear(B)0 -move2table(A,C)0 clear(B)1
+-clear(Table)0 -move2table(A,C)0 clear(Table)1
+on(A,B)0 -move2table(A,Table)0 -on(A,B)1
+on(A,C)0 -move2table(A,Table)0 -on(A,C)1
+on(B,A)0 -move2table(A,Table)0 -on(B,A)1
+on(B,C)0 -move2table(A,Table)0 -on(B,C)1
+on(B,Table)0 -move2table(A,Table)0 -on(B,Table)1
+on(C,A)0 -move2table(A,Table)0 -on(C,A)1
+on(C,B)0 -move2table(A,Table)0 -on(C,B)1
+on(C,Table)0 -move2table(A,Table)0 -on(C,Table)1
+on(Table,A)0 -move2table(A,Table)0 -on(Table,A)1
+on(Table,B)0 -move2table(A,Table)0 -on(Table,B)1
+on(Table,C)0 -move2table(A,Table)0 -on(Table,C)1
+clear(A)0 -move2table(A,Table)0 -clear(A)1
+clear(B)0 -move2table(A,Table)0 -clear(B)1
+clear(C)0 -move2table(A,Table)0 -clear(C)1
+-on(A,B)0 -move2table(A,Table)0 on(A,B)1
+-on(A,C)0 -move2table(A,Table)0 on(A,C)1
+-on(B,A)0 -move2table(A,Table)0 on(B,A)1
+-on(B,C)0 -move2table(A,Table)0 on(B,C)1
+-on(B,Table)0 -move2table(A,Table)0 on(B,Table)1
+-on(C,A)0 -move2table(A,Table)0 on(C,A)1
+-on(C,B)0 -move2table(A,Table)0 on(C,B)1
+-on(C,Table)0 -move2table(A,Table)0 on(C,Table)1
+-on(Table,A)0 -move2table(A,Table)0 on(Table,A)1
+-on(Table,B)0 -move2table(A,Table)0 on(Table,B)1
+-on(Table,C)0 -move2table(A,Table)0 on(Table,C)1
+-clear(A)0 -move2table(A,Table)0 clear(A)1
+-clear(B)0 -move2table(A,Table)0 clear(B)1
+-clear(C)0 -move2table(A,Table)0 clear(C)1
+on(A,B)0 -move2table(B,A)0 -on(A,B)1
+on(A,C)0 -move2table(B,A)0 -on(A,C)1
+on(A,Table)0 -move2table(B,A)0 -on(A,Table)1
+on(B,C)0 -move2table(B,A)0 -on(B,C)1
+on(B,Table)0 -move2table(B,A)0 -on(B,Table)1
+on(C,A)0 -move2table(B,A)0 -on(C,A)1
+on(C,B)0 -move2table(B,A)0 -on(C,B)1
+on(C,Table)0 -move2table(B,A)0 -on(C,Table)1
+on(Table,A)0 -move2table(B,A)0 -on(Table,A)1
+on(Table,B)0 -move2table(B,A)0 -on(Table,B)1
+on(Table,C)0 -move2table(B,A)0 -on(Table,C)1
+clear(B)0 -move2table(B,A)0 -clear(B)1
+clear(C)0 -move2table(B,A)0 -clear(C)1
+clear(Table)0 -move2table(B,A)0 -clear(Table)1
+-on(A,B)0 -move2table(B,A)0 on(A,B)1
+-on(A,C)0 -move2table(B,A)0 on(A,C)1
+-on(A,Table)0 -move2table(B,A)0 on(A,Table)1
+-on(B,C)0 -move2table(B,A)0 on(B,C)1
+-on(B,Table)0 -move2table(B,A)0 on(B,Table)1
+-on(C,A)0 -move2table(B,A)0 on(C,A)1
+-on(C,B)0 -move2table(B,A)0 on(C,B)1
+-on(C,Table)0 -move2table(B,A)0 on(C,Table)1
+-on(Table,A)0 -move2table(B,A)0 on(Table,A)1
+-on(Table,B)0 -move2table(B,A)0 on(Table,B)1
+-on(Table,C)0 -move2table(B,A)0 on(Table,C)1
+-clear(B)0 -move2table(B,A)0 clear(B)1
+-clear(C)0 -move2table(B,A)0 clear(C)1
+-clear(Table)0 -move2table(B,A)0 clear(Table)1
+on(A,B)0 -move2table(B,C)0 -on(A,B)1
+on(A,C)0 -move2table(B,C)0 -on(A,C)1
+on(A,Table)0 -move2table(B,C)0 -on(A,Table)1
+on(B,A)0 -move2table(B,C)0 -on(B,A)1
+on(B,Table)0 -move2table(B,C)0 -on(B,Table)1
+on(C,A)0 -move2table(B,C)0 -on(C,A)1
+on(C,B)0 -move2table(B,C)0 -on(C,B)1
+on(C,Table)0 -move2table(B,C)0 -on(C,Table)1
+on(Table,A)0 -move2table(B,C)0 -on(Table,A)1
+on(Table,B)0 -move2table(B,C)0 -on(Table,B)1
+on(Table,C)0 -move2table(B,C)0 -on(Table,C)1
+clear(A)0 -move2table(B,C)0 -clear(A)1
+clear(B)0 -move2table(B,C)0 -clear(B)1
+clear(Table)0 -move2table(B,C)0 -clear(Table)1
+-on(A,B)0 -move2table(B,C)0 on(A,B)1
+-on(A,C)0 -move2table(B,C)0 on(A,C)1
+-on(A,Table)0 -move2table(B,C)0 on(A,Table)1
+-on(B,A)0 -move2table(B,C)0 on(B,A)1
+-on(B,Table)0 -move2table(B,C)0 on(B,Table)1
+-on(C,A)0 -move2table(B,C)0 on(C,A)1
+-on(C,B)0 -move2table(B,C)0 on(C,B)1
+-on(C,Table)0 -move2table(B,C)0 on(C,Table)1
+-on(Table,A)0 -move2table(B,C)0 on(Table,A)1
+-on(Table,B)0 -move2table(B,C)0 on(Table,B)1
+-on(Table,C)0 -move2table(B,C)0 on(Table,C)1
+-clear(A)0 -move2table(B,C)0 clear(A)1
+-clear(B)0 -move2table(B,C)0 clear(B)1
+-clear(Table)0 -move2table(B,C)0 clear(Table)1
+on(A,B)0 -move2table(B,Table)0 -on(A,B)1
+on(A,C)0 -move2table(B,Table)0 -on(A,C)1
+on(A,Table)0 -move2table(B,Table)0 -on(A,Table)1
+on(B,A)0 -move2table(B,Table)0 -on(B,A)1
+on(B,C)0 -move2table(B,Table)0 -on(B,C)1
+on(C,A)0 -move2table(B,Table)0 -on(C,A)1
+on(C,B)0 -move2table(B,Table)0 -on(C,B)1
+on(C,Table)0 -move2table(B,Table)0 -on(C,Table)1
+on(Table,A)0 -move2table(B,Table)0 -on(Table,A)1
+on(Table,B)0 -move2table(B,Table)0 -on(Table,B)1
+on(Table,C)0 -move2table(B,Table)0 -on(Table,C)1
+clear(A)0 -move2table(B,Table)0 -clear(A)1
+clear(B)0 -move2table(B,Table)0 -clear(B)1
+clear(C)0 -move2table(B,Table)0 -clear(C)1
+-on(A,B)0 -move2table(B,Table)0 on(A,B)1
+-on(A,C)0 -move2table(B,Table)0 on(A,C)1
+-on(A,Table)0 -move2table(B,Table)0 on(A,Table)1
+-on(B,A)0 -move2table(B,Table)0 on(B,A)1
+-on(B,C)0 -move2table(B,Table)0 on(B,C)1
+-on(C,A)0 -move2table(B,Table)0 on(C,A)1
+-on(C,B)0 -move2table(B,Table)0 on(C,B)1
+-on(C,Table)0 -move2table(B,Table)0 on(C,Table)1
+-on(Table,A)0 -move2table(B,Table)0 on(Table,A)1
+-on(Table,B)0 -move2table(B,Table)0 on(Table,B)1
+-on(Table,C)0 -move2table(B,Table)0 on(Table,C)1
+-clear(A)0 -move2table(B,Table)0 clear(A)1
+-clear(B)0 -move2table(B,Table)0 clear(B)1
+-clear(C)0 -move2table(B,Table)0 clear(C)1
+on(A,B)0 -move2table(C,A)0 -on(A,B)1
+on(A,C)0 -move2table(C,A)0 -on(A,C)1
+on(A,Table)0 -move2table(C,A)0 -on(A,Table)1
+on(B,A)0 -move2table(C,A)0 -on(B,A)1
+on(B,C)0 -move2table(C,A)0 -on(B,C)1
+on(B,Table)0 -move2table(C,A)0 -on(B,Table)1
+on(C,B)0 -move2table(C,A)0 -on(C,B)1
+on(C,Table)0 -move2table(C,A)0 -on(C,Table)1
+on(Table,A)0 -move2table(C,A)0 -on(Table,A)1
+on(Table,B)0 -move2table(C,A)0 -on(Table,B)1
+on(Table,C)0 -move2table(C,A)0 -on(Table,C)1
+clear(B)0 -move2table(C,A)0 -clear(B)1
+clear(C)0 -move2table(C,A)0 -clear(C)1
+clear(Table)0 -move2table(C,A)0 -clear(Table)1
+-on(A,B)0 -move2table(C,A)0 on(A,B)1
+-on(A,C)0 -move2table(C,A)0 on(A,C)1
+-on(A,Table)0 -move2table(C,A)0 on(A,Table)1
+-on(B,A)0 -move2table(C,A)0 on(B,A)1
+-on(B,C)0 -move2table(C,A)0 on(B,C)1
+-on(B,Table)0 -move2table(C,A)0 on(B,Table)1
+-on(C,B)0 -move2table(C,A)0 on(C,B)1
+-on(C,Table)0 -move2table(C,A)0 on(C,Table)1
+-on(Table,A)0 -move2table(C,A)0 on(Table,A)1
+-on(Table,B)0 -move2table(C,A)0 on(Table,B)1
+-on(Table,C)0 -move2table(C,A)0 on(Table,C)1
+-clear(B)0 -move2table(C,A)0 clear(B)1
+-clear(C)0 -move2table(C,A)0 clear(C)1
+-clear(Table)0 -move2table(C,A)0 clear(Table)1
+on(A,B)0 -move2table(C,B)0 -on(A,B)1
+on(A,C)0 -move2table(C,B)0 -on(A,C)1
+on(A,Table)0 -move2table(C,B)0 -on(A,Table)1
+on(B,A)0 -move2table(C,B)0 -on(B,A)1
+on(B,C)0 -move2table(C,B)0 -on(B,C)1
+on(B,Table)0 -move2table(C,B)0 -on(B,Table)1
+on(C,A)0 -move2table(C,B)0 -on(C,A)1
+on(C,Table)0 -move2table(C,B)0 -on(C,Table)1
+on(Table,A)0 -move2table(C,B)0 -on(Table,A)1
+on(Table,B)0 -move2table(C,B)0 -on(Table,B)1
+on(Table,C)0 -move2table(C,B)0 -on(Table,C)1
+clear(A)0 -move2table(C,B)0 -clear(A)1
+clear(C)0 -move2table(C,B)0 -clear(C)1
+clear(Table)0 -move2table(C,B)0 -clear(Table)1
+-on(A,B)0 -move2table(C,B)0 on(A,B)1
+-on(A,C)0 -move2table(C,B)0 on(A,C)1
+-on(A,Table)0 -move2table(C,B)0 on(A,Table)1
+-on(B,A)0 -move2table(C,B)0 on(B,A)1
+-on(B,C)0 -move2table(C,B)0 on(B,C)1
+-on(B,Table)0 -move2table(C,B)0 on(B,Table)1
+-on(C,A)0 -move2table(C,B)0 on(C,A)1
+-on(C,Table)0 -move2table(C,B)0 on(C,Table)1
+-on(Table,A)0 -move2table(C,B)0 on(Table,A)1
+-on(Table,B)0 -move2table(C,B)0 on(Table,B)1
+-on(Table,C)0 -move2table(C,B)0 on(Table,C)1
+-clear(A)0 -move2table(C,B)0 clear(A)1
+-clear(C)0 -move2table(C,B)0 clear(C)1
+-clear(Table)0 -move2table(C,B)0 clear(Table)1
+on(A,B)0 -move2table(C,Table)0 -on(A,B)1
+on(A,C)0 -move2table(C,Table)0 -on(A,C)1
+on(A,Table)0 -move2table(C,Table)0 -on(A,Table)1
+on(B,A)0 -move2table(C,Table)0 -on(B,A)1
+on(B,C)0 -move2table(C,Table)0 -on(B,C)1
+on(B,Table)0 -move2table(C,Table)0 -on(B,Table)1
+on(C,A)0 -move2table(C,Table)0 -on(C,A)1
+on(C,B)0 -move2table(C,Table)0 -on(C,B)1
+on(Table,A)0 -move2table(C,Table)0 -on(Table,A)1
+on(Table,B)0 -move2table(C,Table)0 -on(Table,B)1
+on(Table,C)0 -move2table(C,Table)0 -on(Table,C)1
+clear(A)0 -move2table(C,Table)0 -clear(A)1
+clear(B)0 -move2table(C,Table)0 -clear(B)1
+clear(C)0 -move2table(C,Table)0 -clear(C)1
+-on(A,B)0 -move2table(C,Table)0 on(A,B)1
+-on(A,C)0 -move2table(C,Table)0 on(A,C)1
+-on(A,Table)0 -move2table(C,Table)0 on(A,Table)1
+-on(B,A)0 -move2table(C,Table)0 on(B,A)1
+-on(B,C)0 -move2table(C,Table)0 on(B,C)1
+-on(B,Table)0 -move2table(C,Table)0 on(B,Table)1
+-on(C,A)0 -move2table(C,Table)0 on(C,A)1
+-on(C,B)0 -move2table(C,Table)0 on(C,B)1
+-on(Table,A)0 -move2table(C,Table)0 on(Table,A)1
+-on(Table,B)0 -move2table(C,Table)0 on(Table,B)1
+-on(Table,C)0 -move2table(C,Table)0 on(Table,C)1
+-clear(A)0 -move2table(C,Table)0 clear(A)1
+-clear(B)0 -move2table(C,Table)0 clear(B)1
+-clear(C)0 -move2table(C,Table)0 clear(C)1
+on(A,B)0 -move2table(Table,A)0 -on(A,B)1
+on(A,C)0 -move2table(Table,A)0 -on(A,C)1
+on(A,Table)0 -move2table(Table,A)0 -on(A,Table)1
+on(B,A)0 -move2table(Table,A)0 -on(B,A)1
+on(B,C)0 -move2table(Table,A)0 -on(B,C)1
+on(B,Table)0 -move2table(Table,A)0 -on(B,Table)1
+on(C,A)0 -move2table(Table,A)0 -on(C,A)1
+on(C,B)0 -move2table(Table,A)0 -on(C,B)1
+on(C,Table)0 -move2table(Table,A)0 -on(C,Table)1
+on(Table,B)0 -move2table(Table,A)0 -on(Table,B)1
+on(Table,C)0 -move2table(Table,A)0 -on(Table,C)1
+clear(B)0 -move2table(Table,A)0 -clear(B)1
+clear(C)0 -move2table(Table,A)0 -clear(C)1
+clear(Table)0 -move2table(Table,A)0 -clear(Table)1
+-on(A,B)0 -move2table(Table,A)0 on(A,B)1
+-on(A,C)0 -move2table(Table,A)0 on(A,C)1
+-on(A,Table)0 -move2table(Table,A)0 on(A,Table)1
+-on(B,A)0 -move2table(Table,A)0 on(B,A)1
+-on(B,C)0 -move2table(Table,A)0 on(B,C)1
+-on(B,Table)0 -move2table(Table,A)0 on(B,Table)1
+-on(C,A)0 -move2table(Table,A)0 on(C,A)1
+-on(C,B)0 -move2table(Table,A)0 on(C,B)1
+-on(C,Table)0 -move2table(Table,A)0 on(C,Table)1
+-on(Table,B)0 -move2table(Table,A)0 on(Table,B)1
+-on(Table,C)0 -move2table(Table,A)0 on(Table,C)1
+-clear(B)0 -move2table(Table,A)0 clear(B)1
+-clear(C)0 -move2table(Table,A)0 clear(C)1
+-clear(Table)0 -move2table(Table,A)0 clear(Table)1
+on(A,B)0 -move2table(Table,B)0 -on(A,B)1
+on(A,C)0 -move2table(Table,B)0 -on(A,C)1
+on(A,Table)0 -move2table(Table,B)0 -on(A,Table)1
+on(B,A)0 -move2table(Table,B)0 -on(B,A)1
+on(B,C)0 -move2table(Table,B)0 -on(B,C)1
+on(B,Table)0 -move2table(Table,B)0 -on(B,Table)1
+on(C,A)0 -move2table(Table,B)0 -on(C,A)1
+on(C,B)0 -move2table(Table,B)0 -on(C,B)1
+on(C,Table)0 -move2table(Table,B)0 -on(C,Table)1
+on(Table,A)0 -move2table(Table,B)0 -on(Table,A)1
+on(Table,C)0 -move2table(Table,B)0 -on(Table,C)1
+clear(A)0 -move2table(Table,B)0 -clear(A)1
+clear(C)0 -move2table(Table,B)0 -clear(C)1
+clear(Table)0 -move2table(Table,B)0 -clear(Table)1
+-on(A,B)0 -move2table(Table,B)0 on(A,B)1
+-on(A,C)0 -move2table(Table,B)0 on(A,C)1
+-on(A,Table)0 -move2table(Table,B)0 on(A,Table)1
+-on(B,A)0 -move2table(Table,B)0 on(B,A)1
+-on(B,C)0 -move2table(Table,B)0 on(B,C)1
+-on(B,Table)0 -move2table(Table,B)0 on(B,Table)1
+-on(C,A)0 -move2table(Table,B)0 on(C,A)1
+-on(C,B)0 -move2table(Table,B)0 on(C,B)1
+-on(C,Table)0 -move2table(Table,B)0 on(C,Table)1
+-on(Table,A)0 -move2table(Table,B)0 on(Table,A)1
+-on(Table,C)0 -move2table(Table,B)0 on(Table,C)1
+-clear(A)0 -move2table(Table,B)0 clear(A)1
+-clear(C)0 -move2table(Table,B)0 clear(C)1
+-clear(Table)0 -move2table(Table,B)0 clear(Table)1
+on(A,B)0 -move2table(Table,C)0 -on(A,B)1
+on(A,C)0 -move2table(Table,C)0 -on(A,C)1
+on(A,Table)0 -move2table(Table,C)0 -on(A,Table)1
+on(B,A)0 -move2table(Table,C)0 -on(B,A)1
+on(B,C)0 -move2table(Table,C)0 -on(B,C)1
+on(B,Table)0 -move2table(Table,C)0 -on(B,Table)1
+on(C,A)0 -move2table(Table,C)0 -on(C,A)1
+on(C,B)0 -move2table(Table,C)0 -on(C,B)1
+on(C,Table)0 -move2table(Table,C)0 -on(C,Table)1
+on(Table,A)0 -move2table(Table,C)0 -on(Table,A)1
+on(Table,B)0 -move2table(Table,C)0 -on(Table,B)1
+clear(A)0 -move2table(Table,C)0 -clear(A)1
+clear(B)0 -move2table(Table,C)0 -clear(B)1
+clear(Table)0 -move2table(Table,C)0 -clear(Table)1
+-on(A,B)0 -move2table(Table,C)0 on(A,B)1
+-on(A,C)0 -move2table(Table,C)0 on(A,C)1
+-on(A,Table)0 -move2table(Table,C)0 on(A,Table)1
+-on(B,A)0 -move2table(Table,C)0 on(B,A)1
+-on(B,C)0 -move2table(Table,C)0 on(B,C)1
+-on(B,Table)0 -move2table(Table,C)0 on(B,Table)1
+-on(C,A)0 -move2table(Table,C)0 on(C,A)1
+-on(C,B)0 -move2table(Table,C)0 on(C,B)1
+-on(C,Table)0 -move2table(Table,C)0 on(C,Table)1
+-on(Table,A)0 -move2table(Table,C)0 on(Table,A)1
+-on(Table,B)0 -move2table(Table,C)0 on(Table,B)1
+-clear(A)0 -move2table(Table,C)0 clear(A)1
+-clear(B)0 -move2table(Table,C)0 clear(B)1
+-clear(Table)0 -move2table(Table,C)0 clear(Table)1

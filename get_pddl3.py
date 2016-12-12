@@ -168,21 +168,19 @@ class PDDL:
         
         for a in self.h_actions:
             for p in pred:
-                if (p[0]!="-" and p not in a.effect and "-"+p not in a.effect):
-                    
+                
+                if (p not in a.effect and "-"+p not in a.effect):
                     clause.append("-" + p + str(horizon-1))
                     clause.append("-" + a.name + str(horizon-1))
                     clause.append(p + str(horizon))
                     self.sat_sentence.append(clause)
                     clause=[]
-                    
-                if (p[0]=="-" and p[1:] not in a.effect and p not in a.effect):
-                    clause.append(p[1:] + str(horizon-1))
+
+                    clause.append(p + str(horizon-1))
                     clause.append("-" + a.name + str(horizon-1))
-                    clause.append(p + str(horizon))
+                    clause.append("-" + p + str(horizon))
                     self.sat_sentence.append(clause)
                     clause=[]
-                
                     
         #choose one action per frame
         action_list=[]
