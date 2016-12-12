@@ -2,6 +2,7 @@ import sys
 import itertools
 import copy
 from dpll import *
+from operator import itemgetter
 
 def get_letters(string):
     letters = []
@@ -57,16 +58,16 @@ class PDDL:
 
         for a in self.actions:
             for pred in a.precond + a.effect:
-                p = pred.split("(")
-                pred_name = p[0]
-                nb_args = p[1].count(",")+1
-                info=[pred_name, nb_args]
-                if info in p_list:
-                    continue
-                else:
-                    p_list.append(info)
-
-        
+                if pred[0]!="-":
+                    p = pred.split("(")
+                    pred_name = p[0]
+                    nb_args = p[1].count(",")+1
+                    info=[pred_name, nb_args]
+                    if info in p_list:
+                        continue
+                    else:
+                        p_list.append(info)
+               
         for pred_info in p_list:
             if pred_info[1]>1:
                 combinations=list(itertools.permutations(self.consts,pred_info[1]))
@@ -87,7 +88,7 @@ class PDDL:
                             predicate += listing + ","
                 self.predicates.append(predicate)
         
-
+     
         for predicate in self.predicates:
             if predicate in self.init_state:
                 self.h_init_state.append(predicate)
@@ -136,7 +137,7 @@ class PDDL:
                     h_effects.append(effect_name+"("+','.join(effect_args)+")")
                 self.h_actions.append(action(h_action_name, h_precond, h_effects))
         
-        
+                    
             
     
     def build_sat_sentence(self, horizon, last_sentence=None):
@@ -317,8 +318,9 @@ def open_file(file):
     f.close()
     return pddl
 
-def convert2dimacs(sentence,dpddl):
+def convert2dimacs(sentence,pddl):
     dictionary={}
+    actions={}
     dimacs=copy.deepcopy(sentence)
     n=1
     for i,clause in enumerate(sentence):
@@ -332,12 +334,16 @@ def convert2dimacs(sentence,dpddl):
                 else:
                     dictionary[literal]=-n
                     dictionary[literal[1:]]=n
+                    for a in pddl.h_actions:
+                        if literal[1:len(literal)-1] in a.name:
+                            actions[literal[1:len(literal)]]=n
                     dimacs[i][j]=dictionary[literal]
                     n=n+1
                 
             else:
                 dimacs[i][j]=dictionary[literal]
-    returning=[dictionary,dimacs]
+                
+    returning=[dictionary,dimacs,dict((k,v) for k,v in actions.items())]
     return returning
                 
 
@@ -362,10 +368,21 @@ def main():
             continue
         else:
             break
-
     pddl.sat_sentence=t_sentence
     pddl.dimacs_sentence=D[1]
+    action_ref=D[2]
     pddl.show()
+
+    plan=[]
+    for key in action_ref.keys():
+        if action_ref[key] in result:
+            plan.append([key,action_ref[key]])
+    plan.sort(key = lambda row: row[1])
+
+    print("")
+    for step in plan:
+        print(step[0])
+    print("")
     pddl.print_sentence(0)
     print(h)
     print(result)

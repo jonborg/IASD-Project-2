@@ -32,32 +32,7 @@ class state:
         print("---------------------------")
 
     
-    """def assign(self,l_values):
-        self.l_values=l_values
-        ic=0
-        while ic<len(self.sentence):
-            f=1 #A flag. if clause is true f=0, otherwise it will stay 1
-            il=0
-            while il<len(self.sentence[ic]):
-                for l in l_values:
-                
-                    if f==1:
-                        if self.sentence[ic][il]==l:
-                            f=0; #a clausula não é falsa
-                            break
-                        if self.sentence[ic][il]==-l:
-                            if len(self.sentence[ic])==1:
-                                self.sentence=[]
-                                return
-                            self.sentence[ic].pop(il)
-                            il=il-1
-                            break
-                il=il+1
-          
-            if f==0:
-                self.sentence.pop(ic)
-                ic=ic-1
-            ic=ic+1"""
+    
     def assign(self,l_values):
         
 
@@ -116,7 +91,7 @@ class state:
         
         for clauses in self.sentence:
             for literal in clauses:
-                flag=0
+                """flag=0
                 if pure==[]:
                     pure.append(literal)
                 for index,p in enumerate(pure):
@@ -127,7 +102,18 @@ class state:
                     if p==literal:
                         flag=1;
                 if flag==0:
-                    pure.append(literal)
+                    pure.append(literal)"""
+                
+                if literal not in n_pure and -literal not in n_pure:
+                    if -literal in pure:
+                        pure.remove(-literal)
+                        n_pure.append(literal)
+                    else:
+                        if literal not in pure:
+                            pure.append(literal)
+                
+                    
+                    
         return pure
 
 
@@ -149,13 +135,11 @@ def children (current_state,assign):
 
 
 def dpll (current_state):
-    current_state.show()
+    
     #SATISFABLE?
     if current_state.sentence==True:
         return current_state.l_values
-    else:
-        print("scanning ("+str(current_state.depth)+")...)")
-        input()
+   
     
     #EMPTY CLAUSE
     if current_state.sentence==[]:
@@ -181,6 +165,7 @@ def dpll (current_state):
 
     #PURE
     pure=current_state.pure()
+
     for l in pure:
         assign=copy.deepcopy(current_state.l_values)
         assign[abs(l)-1]=l
