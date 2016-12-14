@@ -278,11 +278,9 @@ class sat_action:
 
 def add_goal_to_sentence(sentence,horizon,goal):
         #add goal state
-        clause=[]
-        for predicate in goal:
-            clause.append(predicate+str(horizon))
         s=copy.deepcopy(sentence)
-        s.append(clause)
+        for predicate in goal:
+            s.append([predicate+str(horizon)])
         return s
 
 def open_file(file):
@@ -295,25 +293,25 @@ def open_file(file):
     
     for line in lines:
         words = list(line.split())
-            
-        if words[0] == 'I':
-            pddl.init_state = words[1:]
-        if words[0] == 'G':
-            pddl.goal_state = words[1:]
-        if words[0] == 'A':
-            ind = 0
-            # the symbol '->' separates preconditions from effects
-            for i in range(len(words)): # search index of symbol '->'
-                if words[i] == "->":
-                    ind = i
-                    break
-            
-            name = words[1]
-            preconditions = words[3:ind]
-            effects = words[ind+1:]
-            
-            new_action = action(name, preconditions, effects)
-            pddl.add_action(new_action)
+        if words!=[]:
+            if words[0] == 'I':
+                pddl.init_state = words[1:]
+            if words[0] == 'G':
+                pddl.goal_state = words[1:]
+            if words[0] == 'A':
+                ind = 0
+                # the symbol '->' separates preconditions from effects
+                for i in range(len(words)): # search index of symbol '->'
+                    if words[i] == "->":
+                        ind = i
+                        break
+                
+                name = words[1]
+                preconditions = words[3:ind]
+                effects = words[ind+1:]
+                
+                new_action = action(name, preconditions, effects)
+                pddl.add_action(new_action)
 
     f.close()
     return pddl
@@ -364,7 +362,7 @@ def main():
         setup=[copy.deepcopy(D[1]),copy.deepcopy(D[1]),[0]*n_literals,[],[],0,[]]
         init_state=state(setup)
         result=dpll(init_state)
-        if result==False:
+        if result[0]==False:
             continue
         else:
             break
@@ -374,17 +372,25 @@ def main():
     pddl.show()
 
     plan=[]
-    for key in action_ref.keys():
-        if action_ref[key] in result:
-            plan.append([key,action_ref[key]])
-    plan.sort(key = lambda row: row[1])
+    if result[0]!=False:
+        for key in action_ref.keys():
+            if action_ref[key] in result[1]:
+                plan.append([key,action_ref[key]])
+        plan.sort(key = lambda row: row[1])
 
-    print("")
-    for step in plan:
-        print(step[0])
-    print("")
+        print("")
+        for step in plan:
+            print(step[0])
+        print("")
     pddl.print_sentence(0)
     print(h)
+    inv_dict = dict((v,k) for k,v in pddl.dict.items())
+    for i in range(0,h+1):
+        for r in result[1]:
+            if r!=0:
+                if inv_dict[r][len(inv_dict[r])-1]==str(i) and inv_dict[r][0]!="-":
+                    print(inv_dict[r])
+        print("")
     print(result)
 
 if __name__ == "__main__":

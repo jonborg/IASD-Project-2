@@ -138,12 +138,12 @@ def dpll (current_state):
     
     #SATISFABLE?
     if current_state.sentence==True:
-        return current_state.l_values
+        return [True,current_state.l_values]
    
     
     #EMPTY CLAUSE
     if current_state.sentence==[]:
-        return False
+        return [False,current_state.l_values]
 
     #UNIT
     unit=current_state.unit()
@@ -157,7 +157,7 @@ def dpll (current_state):
             current_state.children.append(new_state.l_values)
             new_state.last_op=[l,"UNIT"]
             status=dpll(new_state)
-            if status==False:
+            if status[0]==False:
                 return status
             else:
                 return status
@@ -174,10 +174,11 @@ def dpll (current_state):
         current_state.children.append(new_state.l_values)
         new_state.last_op=[l,"PURE"]
         status=dpll(new_state)
-        if status==False:
+        if status[0]==False:
             return status
         else:
             return status
+
 
     #CHOOSE LITERAL
     for index,l in enumerate(current_state.l_values):
@@ -188,23 +189,19 @@ def dpll (current_state):
             current_state.children.append(new_state.l_values)
             new_state.last_op=[assign[index],"CHOSEN"]
             status=dpll(new_state)
-            if status==False:
-                continue
-            else:
+            if status[0]!=False:
                 return status
-
+            assign=[]
             assign=copy.deepcopy(current_state.l_values)
             assign[index]=-(index+1) 
             new_state=children(current_state,assign)
             current_state.children.append(new_state.l_values)
             new_state.last_op=[assign[index],"CHOSEN"]
             status=dpll(new_state)
-            if status==False:
+            if status[0]==False:
                 return status
             else:
                 return status
-
-   
     
 
     
