@@ -139,7 +139,7 @@ class PDDL:
                                 effect_args[ii]=listing[ij]
                     
                     h_effects.append(effect_name+"("+','.join(effect_args)+")")
-                    self.h_actions.append(action(h_action_name, h_precond, h_effects))
+                self.h_actions.append(action(h_action_name, h_precond, h_effects))
         
                     
             
@@ -192,7 +192,7 @@ class PDDL:
         for action in self.h_actions:
             action_list.append(action.name+str(horizon-1))
         self.sat_sentence.append(action_list)
-
+        
         for index,i in enumerate(action_list):
             for j in action_list[index+1:]:
                 self.sat_sentence.append(["-"+i,"-"+j])
@@ -356,7 +356,7 @@ def main():
 	
     pddl = open_file(sys.argv[1])
     pddl.hebrand_base()
-    for h in range(1,2):
+    for h in range(1,4):
         print(h)
         pddl.build_sat_sentence(h)
         t_sentence=add_goal_to_sentence(pddl.sat_sentence,h,pddl.goal_state)
@@ -392,7 +392,7 @@ def main():
     for i in range(0,h+1):
         for r in result[1]:
             if r!=0:
-                if inv_dict[r][len(inv_dict[r])-1]==str(i) :#and inv_dict[r][0]!="-":
+                if inv_dict[r][len(inv_dict[r])-1]==str(i) and inv_dict[r][0]!="-":
                     print(inv_dict[r])
         print("")
     print(result)
