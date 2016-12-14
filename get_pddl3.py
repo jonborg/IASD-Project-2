@@ -71,10 +71,9 @@ class PDDL:
                
         for pred_info in p_list:
             if pred_info[1]>1:
-                combinations=list(itertools.product(self.consts,repeat=pred_info[1]))
+                combinations=list(itertools.permutations(self.consts,pred_info[1]))
             else:
                 combinations=self.consts
-
             
             for listing in combinations:
                 predicate=pred_info[0] + "("
@@ -108,39 +107,58 @@ class PDDL:
             action_name = act.name.split("(")
             action_args = get_letters(action_name[1]) #variables
             action_name = action_name[0]
-            combinations = list(itertools.product(self.consts,repeat=act.nb_args))
-            
+            combinations = list(itertools.permutations(self.consts,act.nb_args))
+           
             
             for listing in combinations:
                 h_action_name = action_name + "(" + ','.join(listing) + ")"
                 # convert preconditions into hebrand base
                 h_precond = []
+                flag=0
                 for precond in act.precond:
                     dummy_precond = precond.split("(")
                     precond_name = dummy_precond[0]
                     precond_args = dummy_precond[1][0:len(dummy_precond[1])-1].split(",")
-                    args = get_letters(dummy_precond[1])
+                    for p in precond_args:
+                        if p in listing:
+                            flag=1
+                            break
+                    if flag==1:
+                        break
+                    
                     for ii,i in enumerate(precond_args):
                         for ij,j in enumerate(action_args):
                             if i==j:
                                 precond_args[ii]=listing[ij]
                     h_precond.append(precond_name+"("+','.join(precond_args)+")")
-                    
+                if flag==1:
+                    continue
+                flag=0
                 # convert effects in to hebrand base
                 h_effects = []
                 for effect in act.effect:
                     dummy_effect = effect.split("(")
                     effect_name = dummy_effect[0]
                     effect_args =dummy_effect[1][0:len(dummy_effect[1])-1].split(",")
-
+                    
+                    for e in effect_args:
+                        if e in listing:
+                            flag=1
+                            break
+                    if flag==1:
+                        break
                     for ii,i in enumerate(effect_args):
                         for ij,j in enumerate(action_args):
                             if i==j:
                                 effect_args[ii]=listing[ij]
+                        
                     
                     h_effects.append(effect_name+"("+','.join(effect_args)+")")
-                self.h_actions.append(action(h_action_name, h_precond, h_effects))
-        
+                if flag==1:
+                    continue
+                else:
+                    self.h_actions.append(action(h_action_name, h_precond, h_effects))
+                
                     
             
     
@@ -230,8 +248,8 @@ class PDDL:
         print("SAT dictionary:")
         # invert mapping for printing
         inv_dict = dict((v,k) for k,v in self.dict.items())
-        for key in sorted(inv_dict.keys()):
-            print("\t" + str(key) + " : " + str(inv_dict[key]))
+        """for key in sorted(inv_dict.keys()):
+            print("\t" + str(key) + " : " + str(inv_dict[key]))"""
         
     def print_sentence(self,mode):
         f = open("sentence.txt", "w")
@@ -356,7 +374,9 @@ def main():
 	
     pddl = open_file(sys.argv[1])
     pddl.hebrand_base()
-    for h in range(1,4):
+    h=0
+    while 1:
+        h=h+1
         print(h)
         pddl.build_sat_sentence(h)
         t_sentence=add_goal_to_sentence(pddl.sat_sentence,h,pddl.goal_state)
